@@ -61,7 +61,7 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-.course-badge {
+.course, .course-badge {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -164,6 +164,11 @@ body {
         margin-bottom: 10px;
     }
 }
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
@@ -172,8 +177,8 @@ body {
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Udemy and Coursera Premium Pack for €4.99<br>Master In-Demand Skills with Our <span class="text-primary">+7000 Premium Courses Pack for €4.99</span></h1>
-                    <p class="lead mb-4">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €4.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
+                    <h1 class="display-4 fw-bold mb-4">Udemy and Coursera Premium Pack for €9.99<br>Master In-Demand Skills with Our <span class="text-primary">+7000 Premium Courses Pack for €9.99</span></h1>
+                    <p class="lead mb-4">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €9.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
                     <p class="lead mb-4">Get instant access to over 7000 top-rated Udemy and Coursera courses for less than the price of a single one!</p>
                     
                     <div class="d-flex gap-3 mb-4">
@@ -193,15 +198,34 @@ body {
                     
                     <div class="cta-buttons">
                         <button class="btn btn-primary btn-lg me-3">
-                            <a style="color:white;" href="https://ko-fi.com/s/ed443be227">Access and Download Courses for €4.99</a> <i class="fas fa-arrow-right ms-2"></i>
+                            <a style="color:white;" href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY">Access and Download Courses for €9.99</a> <i class="fas fa-arrow-right ms-2"></i>
                         </button>
                         <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#freePreviewModal">
-                           
                         </button>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://i.postimg.cc/VNFr2bJQ/155c3cd9-8b2f-4c6b-b5cf-7f46653fc562-screenshot2025-03-07220722.png" alt="Premium Course Pack" class="img-fluid rounded shadow">
+                    <div id="courseCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.postimg.cc/VNFr2bJQ/155c3cd9-8b2f-4c6b-b5cf-7f46653fc562-screenshot2025-03-07220722.png" alt="Premium Course Pack 1" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/3J4kJ5wG/course-image2.jpg" alt="Premium Course Pack 2" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/yY5XzNqZ/course-image3.jpg" alt="Premium Course Pack 3" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,7 +237,7 @@ body {
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <div class="d-flex flex-wrap justify-content-around align-items-center">
-                        <span class="text-muted mb-2 mb-md-0"><i class="fas fa-check-circle text-success me-2"></i> Access and download for €4.99</span>
+                        <span class="text-muted mb-2 mb-md-0"><i class="fas fa-check-circle text-success me-2"></i> Access and download for €9.99</span>
                         <span class="text-muted mb-2 mb-md-0"><i class="fas fa-shield-alt text-primary me-2"></i> Secure Payment</span>
                         <span class="text-muted mb-2 mb-md-0"><i class="fas fa-headset text-info me-2"></i> 24/7 Support</span>
                         <span class="text-muted"><i class="fas fa-users text-warning me-2"></i> 15,000+ Students</span>
@@ -227,7 +251,7 @@ body {
     <section class="value-section py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">Why This Pack is a Game-Changer at <span class="text-primary">€4.99</span></h2>
+                <h2 class="fw-bold">Why This Pack is a Game-Changer at <span class="text-primary">€9.99</span></h2>
                 <p class="lead text-muted">Here's what sets our course pack apart from the competition</p>
             </div>
             
@@ -239,7 +263,7 @@ body {
                                 <i class="fas fa-money-bill-wave fs-3"></i>
                             </div>
                             <h5>Save Thousands</h5>
-                            <p class="text-muted">Get over €15,000 worth of premium courses for just €4.99.</p>
+                            <p class="text-muted">Get over €15,000 worth of premium courses for just €9.99.</p>
                         </div>
                     </div>
                 </div>
@@ -274,7 +298,7 @@ body {
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Diverse <span class="text-primary">Course Categories</span> Included</h2>
-                <p class="lead text-muted">Premium Udemy and Coursera courses to download for €4.99</p>
+                <p class="lead text-muted">Premium Udemy and Coursera courses to download for €9.99</p>
             </div>
             
             <div class="row g-4">
@@ -431,7 +455,7 @@ body {
             
             <div class="text-center mt-5">
                 <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#fullCourseListModal">
-                    <a style="color:white;" href="https://ko-fi.com/s/ed443be227">View Full Course List</a> <i class="fas fa-list ms-2"></i>
+                    <a style="color:white;" href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY">View Full Course List</a> <i class="fas fa-list ms-2"></i>
                 </button>
             </div>
         </div>
@@ -442,7 +466,7 @@ body {
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">What Our <span class="text-primary">Students</span> Say</h2>
-                <p class="lead text-muted">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €4.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
+                <p class="lead text-muted">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €9.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
             </div>
         </div>
     </section>
@@ -452,7 +476,7 @@ body {
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold"><span class="text-primary">Unbeatable</span> Value</h2>
-                <p class="lead text-muted">Get lifetime access to all courses for just €4.99</p>
+                <p class="lead text-muted">Get lifetime access to all courses for just €9.99</p>
             </div>
             
             <div class="row justify-content-center">
@@ -473,10 +497,10 @@ body {
                                 <div class="col-md-6 text-center">
                                     <div class="price-box p-4 bg-light rounded">
                                         <div class="text-muted text-decoration-line-through">€1,497</div>
-                                        <div class="display-4 fw-bold text-primary">€4.99</div>
+                                        <div class="display-4 fw-bold text-primary">€9.99</div>
                                         <div class="text-success fw-bold mb-3">Save 99%</div>
                                         <button class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal">
-                                            <a style="color: white;" href="https://ko-fi.com/s/ed443be227">Access and Download Now</a>
+                                            <a style="color: white;" href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY">Access and Download Now</a>
                                         </button>
                                         <div class="mt-3">
                                             <!-- <img src="images/payment-methods.png" alt="Payment Methods" class="img-fluid" style="max-width: 250px;"> -->
@@ -504,18 +528,18 @@ body {
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <h3 class="fw-bold mb-3">Want to support and test our service?</h3>
-                    <p class="mb-4">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €4.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
+                    <p class="mb-4">🔥 EXCEPTIONAL OFFER: career-maestros offers a Premium Udemy + Coursera Pack (7000+ Courses) for ONLY €9.99! *** ⚠️ WARNING: This offer expires in 24 hours (or as soon as the 50 spots are gone).</p>
                     
                     <form id="freeCourseForm" class="row g-2">
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-light btn-lg w-100">
-                                <a style="color: rgb(9, 8, 8);" href="https://ko-fi.com/s/ed443be227">Get a Course for €4.99</a> <i class="fas fa-gift ms-2"></i>
+                                <a style="color: rgb(9, 8, 8);" href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY">Get a Course for €9.99</a> <i class="fas fa-gift ms-2"></i>
                             </button>
                         </div>
                     </form>
                 </div>
                 <div class="col-lg-4 text-center d-none d-lg-block">
-                    <!-- <img src="images/free-course.png" alt="Course for €4.99" class="img-fluid" style="max-height: 200px;"> -->
+                    <!-- <img src="images/free-course.png" alt="Course for €9.99" class="img-fluid" style="max-height: 200px;"> -->
                 </div>
             </div>
         </div>
@@ -535,12 +559,12 @@ body {
                         <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Are all courses accessible and downloadable for €4.99?
+                                    Are all courses accessible and downloadable for €9.99?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Of course, all courses are accessible for €4.99. Simply click on any link on the site to access the download page.
+                                    Of course, all courses are accessible for €9.99. Simply click on any link on the site to access the download page.
                                 </div>
                             </div>
                         </div>
@@ -629,7 +653,7 @@ body {
                                     <hr>
                                     <div class="d-flex justify-content-between fw-bold">
                                         <span>Total</span>
-                                        <span>€4.99</span>
+                                        <span>€9.99</span>
                                     </div>
                                     
                                     <div class="mt-4">
@@ -708,11 +732,11 @@ body {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="freePreviewModalLabel">Get a Course Preview for €4.99</h5>
+                    <h5 class="modal-title" id="freePreviewModalLabel">Get a Course Preview for €9.99</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-4">Enter your email below to get instant access to a premium course from our pack for €4.99. No credit card required!</p>
+                    <p class="mb-4">Enter your email below to get instant access to a premium course from our pack for €9.99. No credit card required!</p>
                     
                     <form id="previewForm">
                         <div class="mb-3">
@@ -720,7 +744,7 @@ body {
                             <input type="email" class="form-control" id="previewEmail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="previewCourse" class="form-label">Select a course for €4.99</label>
+                            <label for="previewCourse" class="form-label">Select a course for €9.99</label>
                             <select class="form-select" id="previewCourse" required>
                                 <option value="">Choose a course</option>
                                 <option value="web-dev">Web Development Fundamentals</option>
@@ -730,7 +754,7 @@ body {
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">
-                            Get a Course for €4.99 <i class="fas fa-download ms-2"></i>
+                            Get a Course for €9.99 <i class="fas fa-download ms-2"></i>
                         </button>
                     </form>
                     
@@ -784,5 +808,8 @@ body {
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
