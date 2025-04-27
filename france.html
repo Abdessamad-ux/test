@@ -1,221 +1,663 @@
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pack de Compétences Élites | Cours Premium Udemy & Coursera</title>
-    <meta name="description" content="Obtenez un accès à vie à plus de 50 cours premium Udemy et Coursera pour un prix incroyable !">
+    <title>Career Maestros | Premium Udemy & Coursera Courses</title>
+    <meta name="description" content="Get lifetime access to over 7000 premium Udemy and Coursera courses for only $9.99!">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-      :root {
-    --primary: #4361ee;
-    --secondary: #3f37c9;
-    --success: #4cc9f0;
-    --info: #4895ef;
-    --warning: #f72585;
-    --danger: #7209b7;
-    --light: #f8f9fa;
-    --dark: #212529;
-    --purple: #6a4c93;
-    --orange: #f77f00;
-    --teal: #20c997;
-}
+    :root {
+        --primary: #4361ee;
+        --primary-dark: #3a56d4;
+        --secondary: #3f37c9;
+        --accent: #7209b7;
+        --success: #4cc9f0;
+        --info: #4895ef;
+        --warning: #f72585;
+        --danger: #ef233c;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #f8f9fa;
+        --dark-gray: #343a40;
+        
+        --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--warning) 100%);
+        
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+        --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+        --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* Hero Section */
-.hero-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-
-/* Icon Box */
-.icon-box {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-/* Course Card */
-.course-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-
-.course-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 1;
-}
-
-/* Category Card */
-.category-card {
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.category-card:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Testimonial Card */
-.testimonials-section .card {
-    transition: transform 0.3s ease;
-}
-
-.testimonials-section .card:hover {
-    transform: translateY(-5px);
-}
-
-/* Pricing Section */
-.price-box {
-    position: relative;
-    overflow: hidden;
-}
-
-.price-box::before {
-    content: "OFFRE EXCEPTIONNELLE";
-    position: absolute;
-    top: 10px;
-    right: -30px;
-    background: var(--danger);
-    color: white;
-    padding: 3px 30px;
-    font-size: 12px;
-    transform: rotate(45deg);
-}
-
-/* Free Offer Section */
-.free-offer-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-}
-
-/* Final CTA */
-.final-cta {
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/cta-bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Footer */
-.footer {
-    background-color: #111;
-}
-
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    background: var(--primary);
-    color: white !important;
-    transform: translateY(-3px);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    
+    .display-1, .display-2, .display-3, .display-4 {
+        font-weight: 800 !important;
+        letter-spacing: -0.5px;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    /* Button Enhancements */
+    .btn {
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+    }
+    
+    .btn-primary {
+        background: var(--gradient-primary);
+        border: none;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Hero Section */
     .hero-section {
-        padding: 60px 0;
-        text-align: center;
+        padding: 120px 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        position: relative;
+        overflow: hidden;
     }
     
-    .hero-section .cta-buttons {
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(67,97,238,0.1) 0%, rgba(0,0,0,0) 70%);
+        z-index: 0;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-title span {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    .hero-lead {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--gray);
+    }
+    
+    /* Stats Counter */
+    .stat-item {
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    /* Carousel Enhancements */
+    .course-carousel {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transform: perspective(1000px) rotateY(-5deg);
+        transition: var(--transition);
+    }
+    
+    .course-carousel:hover {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.8);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .course-carousel:hover .carousel-control-prev,
+    .course-carousel:hover .carousel-control-next {
+        opacity: 1;
+    }
+    
+    /* Trust Indicators */
+    .trust-section {
+        background: var(--light-gray);
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .trust-item {
+        display: flex;
+        align-items: center;
+        padding: 0 1.5rem;
+    }
+    
+    .trust-item i {
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+    }
+    
+    /* Value Proposition Cards */
+    .value-card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        height: 100%;
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .value-card .card-body {
+        padding: 2rem;
+    }
+    
+    .icon-box {
+        width: 80px;
+        height: 80px;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        margin: 0 auto 1.5rem;
+        background: rgba(67,97,238,0.1);
+        color: var(--primary);
+        font-size: 2rem;
+        transition: var(--transition);
     }
     
-    .trust-section span {
-        display: block;
-        text-align: center;
-        margin-bottom: 10px;
+    .value-card:hover .icon-box {
+        background: var(--gradient-primary);
+        color: white;
+        transform: rotate(5deg) scale(1.1);
     }
-}
+    
+    /* Course Categories */
+    .category-card {
+        border: none;
+        border-radius: 0.75rem;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        background: white;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    
+    .category-card:hover {
+        background: var(--gradient-primary);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .category-card:hover .icon-box {
+        background: rgba(255,255,255,0.2);
+        color: white;
+    }
+    
+    /* Featured Courses */
+    .course-card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        height: 100%;
+    }
+    
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .course-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .course-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .course-rating {
+        color: #ffc107;
+    }
+    
+    /* Pricing Section */
+    .pricing-card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+    }
+    
+    .pricing-card:hover {
+        transform: scale(1.02);
+    }
+    
+    .price-box {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        padding: 2rem;
+        background: rgba(67,97,238,0.05);
+    }
+    
+    .price-box::before {
+        content: "LIMITED OFFER";
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background: var(--gradient-accent);
+        color: white;
+        padding: 0.25rem 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        transform: rotate(45deg);
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .original-price {
+        text-decoration: line-through;
+        color: var(--gray);
+    }
+    
+    .current-price {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin: 1rem 0;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        border: none;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .testimonial-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+    }
+    
+    .cta-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* FAQ Section */
+    .accordion-item {
+        border: none;
+        border-radius: 0.75rem !important;
+        margin-bottom: 1rem;
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+    }
+    
+    .accordion-button {
+        font-weight: 600;
+        padding: 1.25rem;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        background: rgba(67,97,238,0.05);
+        color: var(--primary);
+    }
+    
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: transparent;
+    }
+    
+    /* Footer */
+    .footer {
+        background: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+    }
+    
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        color: white;
+        transition: var(--transition);
+        margin-right: 0.5rem;
+    }
+    
+    .social-icon:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .hero-section {
+            padding: 80px 0;
+        }
+        
+        .course-carousel {
+            transform: none;
+            margin-top: 3rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .hero-lead {
+            font-size: 1.1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+        }
+        
+        .trust-item {
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .hero-section {
+            padding: 60px 0;
+        }
+        
+        .btn {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    .floating {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Utility Classes */
+    .rounded-lg {
+        border-radius: 1rem;
+    }
+    
+    .shadow-hover {
+        transition: var(--transition);
+    }
+    
+    .shadow-hover:hover {
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+    }
+    
+    .text-gradient {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
-    <header class="hero-section">
+    <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Pack Premium Udemy et Coursera Gratuit - Maîtrisez des Compétences Recherchées avec Notre <span class="text-primary">Pack de +7000 Cours Premium Gratuits</span></h1>
-                    <p class="lead mb-4">Obtenez un accès instantané à plus de 7000 cours Udemy et Coursera les mieux notés pour moins que le prix d'un seul !</p>
+                <div class="col-lg-6 hero-content" data-aos="fade-right">
+                    <h1 class="hero-title">Master In-Demand Skills with Our <span>7000+ Udemy and Coursera Premium Courses</span></h1>
+                    <p class="hero-lead">Get instant access to over 7000 top-rated Udemy and Coursera courses for less than the price of a single one! </p>
                     
-                    <div class="d-flex gap-3 mb-4">
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold">7000+</div>
-                            <div class="text-muted">Cours</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold">35 000+</div>
-                            <div class="text-muted">Heures</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold">98%</div>
-                            <div class="text-muted">Taux de Réussite</div>
+                    <div class="alert alert-warning mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <div>
+                                <strong>Limited Offer:</strong> Premium course pack for only $9.99! This offer expires in 24 hours! Only 50 Spots Left.
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary btn-lg me-3">
-                            <a style="color:white;" href="https://www.anezom.online/">Accéder et Télécharger les Cours Gratuitement</a> <i class="fas fa-arrow-right ms-2"></i>
-                        </button>
-                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#freePreviewModal">
-                            <a href="https://ko-fi.com/s/d75563ce57">Si vous souhaitez nous soutenir en achetant le pack pour 2,99 $</a> <i class="fas fa-eye ms-2"></i>
-                        </button>
+                    <div class="d-flex mb-5">
+                        <div class="stat-item">
+                            <div class="stat-number">7000+</div>
+                            <div class="stat-label">Courses</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">35,000+</div>
+                            <div class="stat-label">Hours</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Success</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY" class="btn btn-primary btn-lg">
+                            Get Instant Access and Download for $9.99 <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        
+                    </div>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <img src="https://mmolazi.sfo2.cdn.digitaloceanspaces.com/wp-content/uploads/2020/03/safe-checkout.png" alt="Secure Payments" class="img-fluid">
+                        </div>
+                        <small class="text-muted">30-day money back guarantee</small>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://i.postimg.cc/1R0KWLj7/Screenshot-2025-04-22-235212.png" alt="Pack de Cours Premium" class="img-fluid rounded shadow">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div id="courseCarousel" class="carousel slide course-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded-lg overflow-hidden">
+                            <div class="carousel-item active">
+                                <img src="https://i.postimg.cc/Dw6fSfLy/Chat-GPT-Image-Apr-26-2025-06-56-28-PM.png" alt="Premium Course Pack" class="img-fluid w-100" loading="lazy">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/6ppJ1r4t/Screenshot-2025-04-26-182549.png" alt="Premium Course Pack" class="img-fluid w-100" loading="lazy">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/brh40kjX/Screenshot-2025-04-26-182758.png" alt="Premium Course Pack" class="img-fluid w-100" loading="lazy">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/Ls0HVyxc/Modern-Daily-Podcast-You-Tube-Thumbnail.jpg" alt="Premium Course Pack 1" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/VNFr2bJQ/155c3cd9-8b2f-4c6b-b5cf-7f46653fc562-screenshot2025-03-07220722.png" alt="Premium Course Pack 3" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/BZTrSYxJ/Screenshot-2025-04-26-182917.png" alt="Premium Course Pack 3" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.postimg.cc/TYPCzC07/Screenshot-2025-04-26-183702.png" alt="Premium Course Pack 3" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Trust Indicators -->
-    <section class="trust-section py-4 bg-light">
+    <section class="trust-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="d-flex flex-wrap justify-content-around align-items-center">
-                        <span class="text-muted mb-2 mb-md-0"><i class="fas fa-check-circle text-success me-2"></i> Accès et téléchargement gratuits</span>
-                        <span class="text-muted mb-2 mb-md-0"><i class="fas fa-shield-alt text-primary me-2"></i> Aucun paiement</span>
-                        <span class="text-muted mb-2 mb-md-0"><i class="fas fa-headset text-info me-2"></i> Support 24/7</span>
-                        <span class="text-muted"><i class="fas fa-users text-warning me-2"></i> 15 000+ Étudiants</span>
+                <div class="col-lg-10">
+                    <div class="d-flex flex-wrap justify-content-center align-items-center">
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Instant Access for $9.99</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <span>Secure Payment</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-headset text-info"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-users text-warning"></i>
+                            <span>15,000+ Students</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -223,44 +665,44 @@ body {
     </section>
 
     <!-- Value Proposition -->
-    <section class="value-section py-5">
+    <section class="py-5 my-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Pourquoi ce Pack est <span class="text-primary">Révolutionnaire et Gratuit</span></h2>
-                <p class="lead text-muted">Voici ce qui distingue notre pack de cours de la concurrence</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Why This Pack is a <span class="text-gradient">Game-Changer</span></h2>
+                <p class="lead text-muted">Here's what makes our course pack the best investment in your education</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4">
-                                <i class="fas fa-money-bill-wave fs-3"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-money-bill-wave"></i>
                             </div>
-                            <h5>Économisez des Milliers</h5>
-                            <p class="text-muted">Obtenez plus de 15 000 $ de cours premium sans débourser un centime.</p>
+                            <h4>Save Thousands</h4>
+                            <p class="text-muted">Get over $15,000 worth of premium courses for just $9.99 - less than 0.1% of the retail price.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box bg-success bg-opacity-10 text-success mb-4">
-                                <i class="fas fa-infinity fs-3"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-infinity"></i>
                             </div>
-                            <h5>Accès à Vie</h5>
-                            <p class="text-muted">Tous les cours vous appartiennent pour toujours - pas d'abonnements ni de frais récurrents.</p>
+                            <h4>Lifetime Access</h4>
+                            <p class="text-muted">All courses are yours forever with no subscriptions or recurring fees. Learn at your own pace.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box bg-info bg-opacity-10 text-info mb-4">
-                                <i class="fas fa-bolt fs-3"></i>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-bolt"></i>
                             </div>
-                            <h5>Démarrage Immédiat</h5>
-                            <p class="text-muted">Téléchargez et commencez à apprendre quelques minutes après l'achat.</p>
+                            <h4>Instant Start</h4>
+                            <p class="text-muted">Get immediate access to all courses after purchase. Start learning valuable skills within minutes.</p>
                         </div>
                     </div>
                 </div>
@@ -269,76 +711,76 @@ body {
     </section>
 
     <!-- Course Categories -->
-    <section class="categories-section py-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Diverses <span class="text-primary">Catégories de Cours</span> Incluses</h2>
-                <p class="lead text-muted">Cours premium Udemy et Coursera à télécharger gratuitement</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Diverse <span class="text-gradient">Course Categories</span></h2>
+                <p class="lead text-muted">Explore premium courses across all major disciplines</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-danger bg-opacity-10 text-danger mb-3 mx-auto">
-                            <i class="fas fa-laptop-code fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h6>Programmation</h6>
+                        <h5 class="mb-0">Programming</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-warning bg-opacity-10 text-warning mb-3 mx-auto">
-                            <i class="fas fa-chart-line fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <h6>Marketing Digital</h6>
+                        <h5 class="mb-0">Marketing</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-success bg-opacity-10 text-success mb-3 mx-auto">
-                            <i class="fas fa-paint-brush fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h6>Design</h6>
+                        <h5 class="mb-0">Design</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-info bg-opacity-10 text-info mb-3 mx-auto">
-                            <i class="fas fa-briefcase fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <h6>Business</h6>
+                        <h5 class="mb-0">Business</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3 mx-auto">
-                            <i class="fas fa-robot fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h6>IA & Science des Données</h6>
+                        <h5 class="mb-0">AI & Data</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-purple bg-opacity-10 text-purple mb-3 mx-auto">
-                            <i class="fas fa-camera-retro fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="350">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-camera-retro"></i>
                         </div>
-                        <h6>Photographie</h6>
+                        <h5 class="mb-0">Photography</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-orange bg-opacity-10 text-orange mb-3 mx-auto">
-                            <i class="fas fa-heartbeat fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-heartbeat"></i>
                         </div>
-                        <h6>Santé & Fitness</h6>
+                        <h5 class="mb-0">Health</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="category-card text-center p-3 rounded">
-                        <div class="icon-box bg-teal bg-opacity-10 text-teal mb-3 mx-auto">
-                            <i class="fas fa-language fs-4"></i>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="450">
+                    <div class="category-card">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-language"></i>
                         </div>
-                        <h6>Langues</h6>
+                        <h5 class="mb-0">Languages</h5>
                     </div>
                 </div>
             </div>
@@ -346,141 +788,195 @@ body {
     </section>
 
     <!-- Featured Courses -->
-    <section class="featured-section py-5">
+    <section class="py-5 my-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Cours <span class="text-primary">Mis en Avant</span> dans ce Pack</h2>
-                <p class="lead text-muted">Voici un échantillon de ce que vous obtiendrez</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title"><span class="text-gradient">Featured</span> Courses</h2>
+                <p class="lead text-muted">A sample of the premium courses included in this pack</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card course-card h-100 border-0 shadow-sm overflow-hidden">
-                        <div class="course-badge bg-success"></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="course-card">
+                        <div class="course-badge bg-success">Bestseller</div>
+                        <img src="https://i.postimg.cc/6ppJ1r4t/Screenshot-2025-04-26-182549.png" class="card-img-top" alt="Web Development Course" loading="lazy">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary bg-opacity-10 text-primary">Développement</span>
-                                <span class="text-warning">
+                                <span class="badge bg-primary bg-opacity-10 text-primary"></span>
+                                <span class="course-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
-                                    <span class="text-muted ms-1">4.7</span>
+                                    <span class="text-muted ms-1"></span>
                                 </span>
                             </div>
-                            <h5 class="card-title">Bootcamp Complet de Développement Web 2024</h5>
-                            <p class="card-text text-muted">Devenez un développeur full-stack avec HTML, CSS, JavaScript, React, Node.js et plus encore !</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span><i class="far fa-clock me-1"></i> 65 heures</span>
-                                <span><i class="fas fa-user-graduate me-1"></i> 450 000+</span>
+                                <span><i class="fas fa-user-graduate me-1"></i> 2,582+</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card course-card h-100 border-0 shadow-sm overflow-hidden">
-                        <div class="course-badge bg-warning"></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-card">
+                        <div class="course-badge bg-warning">Hot & New</div>
+                        <img src="https://i.postimg.cc/brh40kjX/Screenshot-2025-04-26-182758.png" class="card-img-top" alt="Data Science Course" loading="lazy">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-info bg-opacity-10 text-info">Science des Données</span>
-                                <span class="text-warning">
+                                <span class="badge bg-info bg-opacity-10 text-info"></span>
+                                <span class="course-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
-                                    <span class="text-muted ms-1">4.9</span>
+                                    <span class="text-muted ms-1"></span>
                                 </span>
                             </div>
-                            <h5 class="card-title">Python pour la Science des Données et l'Apprentissage Automatique</h5>
-                            <p class="card-text text-muted">Maîtrisez Python pour l'analyse de données, la visualisation et l'apprentissage automatique avec des projets concrets.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span><i class="far fa-clock me-1"></i> 42 heures</span>
-                                <span><i class="fas fa-user-graduate me-1"></i> 320 000+</span>
+                                <span><i class="fas fa-user-graduate me-1"></i> 3,490+</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card course-card h-100 border-0 shadow-sm overflow-hidden">
-                        <div class="course-badge bg-danger"></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="course-card">
+                        <div class="course-badge bg-danger">Trending</div>
+                        <img src="https://i.postimg.cc/TYPCzC07/Screenshot-2025-04-26-183702.png" class="card-img-top" alt="Marketing Course" loading="lazy">
                         <div class="card-body">
                             <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-warning bg-opacity-10 text-warning">Marketing</span>
-                                <span class="text-warning">
+                                <span class="badge bg-warning bg-opacity-10 text-warning"></span>
+                                <span class="course-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
-                                    <span class="text-muted ms-1">4.8</span>
+                                    <span class="text-muted ms-1"></span>
                                 </span>
                             </div>
-                            <h5 class="card-title">Cours Complet de Marketing Digital</h5>
-                            <p class="card-text text-muted">12 cours en 1 : SEO, Google Ads, Facebook Ads, Email Marketing, Réseaux Sociaux et plus encore !</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span><i class="far fa-clock me-1"></i> 23 heures</span>
-                                <span><i class="fas fa-user-graduate me-1"></i> 280 000+</span>
+                                <span><i class="fas fa-user-graduate me-1"></i> 1,850+</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#fullCourseListModal">
-                    <a style="color:white;" href="https://www.anezom.online/">Voir la Liste Complète des Cours</a> <i class="fas fa-list ms-2"></i>
-                </button>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY" class="btn btn-primary btn-lg me-3">
+                    Get Full Access for $9.99 <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials-section py-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Ce que Nos <span class="text-primary">Étudiants Disent</span></h2>
-                <p class="lead text-muted">Tous ces cours gratuitement, essayez par vous-même</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">What Our <span class="text-gradient">Students</span> Say</h2>
+                <p class="lead text-muted">Don't just take our word for it - hear from our community</p>
             </div>
             
-            <!-- Testimonials commented out in original, so no translation needed here -->
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="testimonial-img me-3" alt="Student" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Web Developer</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"This course pack helped me transition careers in just 6 months. The web development courses are exceptional and the price is unbeatable."</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="testimonial-img me-3" alt="Student" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <small class="text-muted">Data Analyst</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"The Python and data science courses are worth the price alone. I've tripled my income since completing them and applying what I learned."</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-img me-3" alt="Student" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Emma Rodriguez</h5>
+                                <small class="text-muted">Digital Marketer</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="mb-0">"I run my own marketing agency now thanks to the skills I gained from these courses. The digital marketing bundle is incredibly comprehensive."</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="pricing-section py-5">
+    <section class="py-5 my-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Valeur <span class="text-primary">Inégalée</span></h2>
-                <p class="lead text-muted">Obtenez un accès à vie à tous les cours GRATUITEMENT</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title"><span class="text-gradient">Unbeatable</span> Value</h2>
+                <p class="lead text-muted">Get lifetime access to all 7000+ courses for one incredible price</p>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-lg">
-                        <div class="card-body p-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="pricing-card">
+                        <div class="card-body p-4">
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <h3 class="fw-bold mb-3">Pack de Cours Premium Udemy et Coursera</h3>
+                                    <h3 class="fw-bold mb-3">Premium Course Pack</h3>
                                     <ul class="list-unstyled mb-4">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 7000+ Cours Premium</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 35 000+ Heures de Contenu</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Accès à Vie</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Ressources Téléchargeables</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certificats de Fin de Cours</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>7000+</strong> Premium Courses</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>35,000+</strong> Hours of Content</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Lifetime Access to All Courses</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Downloadable Resources & Exercises</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Completion Certificates</li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Regular Course Updates</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-6 text-center">
-                                    <div class="price-box p-4 bg-light rounded">
-                                        <div class="text-muted text-decoration-line-through">$1,497</div>
-                                        <div class="display-4 fw-bold text-primary">GRATUIT</div>
-                                        <div class="text-success fw-bold mb-3">Économisez 100%</div>
-                                        <button class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal">
-                                            <a style="color: white;" href="https://www.anezom.online/">Accéder et Télécharger Maintenant</a>
-                                        </button>
-                                        <div class="mt-3">
-                                            <!-- <img src="images/payment-methods.png" alt="Méthodes de Paiement" class="img-fluid" style="max-width: 250px;"> -->
+                                <div class="col-md-6">
+                                    <div class="price-box">
+                                        <div class="original-price">$3,497</div>
+                                        <div class="current-price">$9.99</div>
+                                        <div class="text-success fw-bold mb-4">Save 99%</div>
+                                        <a href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY" class="btn btn-primary btn-lg w-100 py-3">
+                                            Get Instant Access <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                        <div class="text-center mt-3">
+                                            <small class="text-muted"><i class="fas fa-lock me-1"></i> Secure payment</small>
                                         </div>
                                     </div>
                                 </div>
@@ -490,111 +986,104 @@ body {
                 </div>
             </div>
             
-            <div class="text-center mt-4">
-                <div class="d-inline-block border rounded-pill px-3 py-1">
+            <div class="text-center mt-4" data-aos="fade-up">
+                <div class="d-inline-block border rounded-pill px-3 py-1 bg-light">
                     <i class="fas fa-shield-alt me-2 text-primary"></i>
-                    <!-- <small class="text-muted">Garantie de remboursement de 30 jours - Sans questions</small> -->
+                    <small class="text-muted">30-day money-back guarantee - No questions asked</small>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Free Course Offer -->
-    <section class="free-offer-section py-5 bg-primary text-white">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h3 class="fw-bold mb-3">Voulez-vous nous soutenir tout en testant notre service</h3>
-                    <!-- <p class="mb-4">Entrez votre email ci-dessous et nous vous enverrons un de nos cours premium absolument gratuit - sans engagement !</p> -->
-                    
-                    <form id="freeCourseForm" class="row g-2">
-                        <!-- <div class="col-md-8">
-                            <input type="email" class="form-control form-control-lg" placeholder="Votre meilleur email" required>
-                        </div> -->
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-light btn-lg w-100">
-                                <a style="color: rgbintre: rgb(9, 8, 8);" href="https://www.anezom.online/">Obtenir un Cours Gratuit</a> <i class="fas fa-gift ms-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <!-- <small class="text-white-50 mt-2 d-block"><i class="fas fa-lock me-1"></i> Nous respectons votre vie privée. Désinscrivez-vous à tout moment.</small> -->
+                <div class="col-lg-8 cta-content" data-aos="fade-right">
+                    <h2 class="text-white mb-3">Ready to Transform Your Career?</h2>
+                    <p class="text-white-80 mb-4">Join thousands of students who've accelerated their learning with our premium course pack. Limited time offer - get access now before the price increases!</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY" class="btn btn-light btn-lg">
+                            Get All Courses for $9.99 <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                      
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center d-none d-lg-block">
-                    <!-- <img src="images/free-course.png" alt="Cours Gratuit" class="img-fluid" style="max-height: 200px;"> -->
+                <div class="col-lg-4 text-center d-none d-lg-block" data-aos="fade-left">
+                    <img src="https://i.postimg.cc/6ppJ1r4t/Screenshot-2025-04-26-182549.png" alt="Course Preview" class="img-fluid floating" loading="lazy" style="max-height: 250px; border-radius: 1rem;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section py-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Questions Fréquemment <span class="text-primary">Posées</span></h2>
-                <p class="lead text-muted">Tout ce que vous devez savoir avant d'acheter</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p class="lead text-muted">Everything you need to know before purchasing</p>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-8" data-aos="fade-up">
                     <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                        <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Tous les cours sont-ils accessibles et téléchargeables gratuitement ?
+                                    Are all courses accessible and downloadable for $9.99?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Bien sûr, tous les cours sont gratuits et il suffit de cliquer sur n'importe quel lien du site pour accéder à la page de téléchargement.
+                                    <p>Yes, absolutely! All 7000+ courses are fully accessible and downloadable for just $9.99. You'll get immediate access to the entire collection after purchase.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                        <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    S'agit-il des mêmes cours vendus sur Udemy/Coursera ?
+                                    Are these the same courses sold on Udemy/Coursera?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Oui ! Ce sont exactement les mêmes cours premium vendus sur Udemy et Coursera, souvent à 100-200 $ chacun. Nous avons négocié des accords de licence en gros spéciaux avec les instructeurs pour vous offrir cette offre incroyable.
+                                    <p>Yes! These are the exact same premium courses sold on Udemy and Coursera, often priced at $100-200 each. We've negotiated special bulk licensing deals with instructors to bring you this incredible bundle offer at a fraction of the retail price.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                        <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Puis-je obtenir un certificat pour avoir terminé les cours ?
+                                    Can I get a certificate after completing the courses?
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Absolument ! Chaque cours inclut un certificat de fin de cours que vous pouvez télécharger et ajouter à votre profil LinkedIn ou à votre CV une fois les exigences du cours remplies.
+                                    <p>Absolutely! Each course includes a completion certificate that you can download and add to your LinkedIn profile or resume once you meet the course requirements. These certificates are identical to what you'd receive if purchasing the courses individually.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
-                            <!-- <h2 class="accordion-header" id="headingFour">
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Et si je ne suis pas satisfait des cours ?
+                                    Is there a money-back guarantee?
                                 </button>
-                            </h2> -->
+                            </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Nous offrons une garantie de remboursement sans questions de 30 jours. Si vous n'êtes pas entièrement satisfait pour quelque raison que ce soit, envoyez-nous un email dans les 30 jours et nous vous rembourserons intégralement.
+                                    <p>We offer a 30-day no-questions-asked money-back guarantee. If you're not completely satisfied with the course pack for any reason, simply email us within 30 days of purchase, and we'll refund your payment in full.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
-                            <!-- <h2 class="accordion-header" id="headingFive">
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Vais-je recevoir des mises à jour gratuites pour les nouveaux cours ajoutés au pack ?
+                                    Will new courses be added to the pack?
                                 </button>
-                            </h2> -->
+                            </h2>
                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Oui ! Nous ajoutons régulièrement de nouveaux cours au pack sans frais supplémentaires pour les membres existants. Vous recevrez une notification par email chaque fois que de nouveaux cours sont ajoutés.
+                                    <p>Yes! We regularly add new courses to the pack at no additional cost to existing members. You'll receive email notifications whenever we add new courses, so your library will continue to grow over time.</p>
                                 </div>
                             </div>
                         </div>
@@ -604,155 +1093,118 @@ body {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer py-4 bg-black text-white-50">
+    <!-- Final CTA -->
+    <section class="py-5">
         <div class="container">
-            <!-- Footer content commented out, so no translation needed -->
+            <div class="text-center" data-aos="zoom-in">
+                <h2 class="mb-4">Start Learning Today for Just $9.99</h2>
+                <p class="lead text-muted mb-5">This limited-time offer won't last forever. Get instant access to 7000+ premium courses now.</p>
+                <a href="https://mmolazi.sfo2.cdn.digitaloceanspaces.com/wp-content/uploads/2020/03/safe-checkout.png" class="btn btn-primary btn-lg px-5 py-3">
+                    Get Instant Access <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <div class="mt-4">
+                    <img src="https://mmolazi.sfo2.cdn.digitaloceanspaces.com/wp-content/uploads/2020/03/safe-checkout.png" alt="Payment Methods" class="img-fluid" loading="lazy" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white mb-4">Career Maestros</h5>
+                    <p class="text-white-50">Providing affordable access to premium education since 2024. Our mission is to make high-quality learning accessible to everyone.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Courses</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">FAQ</a></li>
+                        <li><a href="#" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Categories</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Business</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Marketing</a></li>
+                        <li><a href="#" class="text-white-50">Data Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p class="text-white-50 mb-3">Subscribe to get updates on new courses and special offers.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <small class="text-white-50"><i class="fas fa-info-circle me-1"></i> We respect your privacy. Unsubscribe anytime.</small>
+                </div>
+            </div>
             <hr class="my-4 bg-dark">
             <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <small class="mb-2 mb-md-0">© 2024 Pack de Maîtrise de Carrière. Tous droits réservés.</small>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-white-50">© 2024 Career Maestros. All rights reserved.</small>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!-- <img src="images/payment-icons.png" alt="Méthodes de Paiement" class="img-fluid" style="max-width: 250px;"> -->
+                    <small class="text-white-50">
+                        <a href="#" class="text-white-50 me-2">Terms of Service</a>
+                        <a href="#" class="text-white-50 me-2">Privacy Policy</a>
+                        <a href="#" class="text-white-50">Refund Policy</a>
+                    </small>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Modals -->
-    <!-- Purchase Modal -->
-    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="purchaseModalLabel">Finaliser Votre Achat</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow-none">
-                                <div class="card-body">
-                                    <h6 class="fw-bold mb-3">Résumé de la Commande</h6>
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <span>Pack de Cours Premium</span>
-                                        <span>$97.00</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <span>Réduction</span>
-                                        <span class="text-success">-$1,400.00</span>
-                                    </div>
-                                    <hr>
-                                    <div class="d-flex justify-content-between fw-bold">
-                                        <span>Total</span>
-                                        <span>$97.00</span>
-                                    </div>
-                                    
-                                    <div class="mt-4">
-                                        <h6 class="fw-bold mb-3">Méthode de Paiement</h6>
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
-                                                <label class="form-check-label" for="creditCard">
-                                                    Carte de Crédit/Débit
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="paypal">
-                                                <label class="form-check-label" for="paypal">
-                                                    PayPal
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="crypto">
-                                                <label class="form-check-label" for="crypto">
-                                                    Cryptomonnaie
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="fw-bold mb-3">Informations de Contact</h6>
-                            <form>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Adresse email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Nom complet">
-                                </div>
-                                
-                                <h6 class="fw-bold mt-4 mb-3">Détails de la Carte</h6>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Numéro de carte" required>
-                                </div>
-                                <div class="row g-2 mb-3">
-                                    <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="MM/AA" required>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="text" class="form-control" placeholder="CVC" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-check mb-4">
-                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
-                                    <label class="form-check-label small" for="termsCheck">
-                                        J'accepte les <a href="#">Conditions de Service</a> et la <a href="#">Politique de Confidentialité</a>
-                                    </label>
-                                </div>
-                                
-                                <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">
-                                    Finaliser l'Achat <i class="fas fa-lock ms-2"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Free Preview Modal -->
     <div class="modal fade" id="freePreviewModal" tabindex="-1" aria-labelledby="freePreviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="freePreviewModalLabel">Obtenir un Aperçu Gratuit du Cours</h5>
+                    <h5 class="modal-title" id="freePreviewModalLabel">Get a Free Course Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-4">Entrez votre email ci-dessous pour obtenir un accès instantané à un cours premium gratuit de notre pack. Aucune carte de crédit requise !</p>
+                    <p class="mb-4">Enter your email below to get instant access to a free preview of one of our premium courses. No credit card required!</p>
                     
                     <form id="previewForm">
                         <div class="mb-3">
-                            <label for="previewEmail" class="form-label">Adresse email</label>
+                            <label for="previewEmail" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="previewEmail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="previewCourse" class="form-label">Sélectionnez un cours gratuit</label>
+                            <label for="previewCourse" class="form-label">Select a course to preview</label>
                             <select class="form-select" id="previewCourse" required>
-                                <option value="">Choisissez un cours</option>
-                                <option value="web-dev">Fondamentaux du Développement Web</option>
-                                <option value="python">Python pour Débutants</option>
-                                <option value="digital-marketing">Bases du Marketing Digital</option>
-                                <option value="photoshop">Essentiels de Photoshop</option>
+                                <option value="">Choose a course</option>
+                                <option value="web-dev">Web Development Fundamentals</option>
+                                <option value="python">Python for Beginners</option>
+                                <option value="digital-marketing">Digital Marketing Basics</option>
+                                <option value="photoshop">Photoshop Essentials</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            Obtenir un Cours Gratuit <i class="fas fa-download ms-2"></i>
+                        <button type="submit" class="btn btn-primary w-100 py-3">
+                            Get Free Preview <i class="fas fa-download ms-2"></i>
                         </button>
                     </form>
                     
                     <div class="mt-3 text-center">
-                        <small class="text-muted"><i class="fas fa-lock me-1"></i> Nous respectons votre vie privée. Désinscrivez-vous à tout moment.</small>
+                        <small class="text-muted"><i class="fas fa-lock me-1"></i> We respect your privacy. Unsubscribe at any time.</small>
                     </div>
                 </div>
             </div>
@@ -761,46 +1213,112 @@ body {
 
     <!-- Full Course List Modal -->
     <div class="modal fade" id="fullCourseListModal" tabindex="-1" aria-labelledby="fullCourseListModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="fullCourseListModalLabel">Liste Complète des Cours</h5>
+                    <h5 class="modal-title" id="fullCourseListModalLabel">Full Course List (Sample)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="table-responsive">
-                        <table class="table">
-                            <thead>
+                        <table class="table table-hover">
+                            <thead class="table-light">
                                 <tr>
-                                    <th>Titre du Cours</th>
-                                    <th>Catégorie</th>
-                                    <th>Heures</th>
-                                    <th>Note</th>
-                                    <th>Étudiants</th>
+                                    <th>Course Title</th>
+                                    <th>Category</th>
+                                    <th>Hours</th>
+                                    <th>Rating</th>
+                                    <th>Students</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Bootcamp Complet de Développement Web 2024</td>
-                                    <td>Développement</td>
+                                    <td>Complete Web Development Bootcamp 2024</td>
+                                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Development</span></td>
                                     <td>65</td>
-                                    <td>4.7</td>
-                                    <td>450 000+</td>
+                                    <td><span class="text-warning">4.7</span></td>
+                                    <td>450,000+</td>
                                 </tr>
                                 <tr>
-                                    <td>Python pour la Science des Données et l'Apprentissage Automatique</td>
-                                    <td>Science des Données</td>
+                                    <td>Python for Data Science and Machine Learning</td>
+                                    <td><span class="badge bg-info bg-opacity-10 text-info">Data Science</span></td>
                                     <td>42</td>
-                                    <td>4.9</td>
-                                    <td>320 000+</td>
+                                    <td><span class="text-warning">4.9</span></td>
+                                    <td>320,000+</td>
                                 </tr>
-                                <!-- Table is incomplete in original, so translation stops here -->
+                                <tr>
+                                    <td>Complete Digital Marketing Course</td>
+                                    <td><span class="badge bg-warning bg-opacity-10 text-warning">Marketing</span></td>
+                                    <td>23</td>
+                                    <td><span class="text-warning">4.8</span></td>
+                                    <td>280,000+</td>
+                                </tr>
+                                <tr>
+                                    <td>iOS & Swift - The Complete iOS App Development Bootcamp</td>
+                                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Development</span></td>
+                                    <td>55</td>
+                                    <td><span class="text-warning">4.8</span></td>
+                                    <td>150,000+</td>
+                                </tr>
+                                <tr>
+                                    <td>The Complete Financial Analyst Course 2024</td>
+                                    <td><span class="badge bg-success bg-opacity-10 text-success">Finance</span></td>
+                                    <td>28</td>
+                                    <td><span class="text-warning">4.6</span></td>
+                                    <td>120,000+</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="https://www.paypal.com/ncp/payment/UK8N2QGKRFHYY" class="btn btn-primary">Get Full Access for $9.99</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Trust indicators animation
+        const trustItems = document.querySelectorAll('.trust-item');
+        
+        trustItems.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 100}ms`;
+        });
+        
+        // Carousel hover effect
+        const carousel = document.querySelector('.course-carousel');
+        
+        if(carousel) {
+            carousel.addEventListener('mouseenter', () => {
+                const controls = carousel.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+                controls.forEach(control => {
+                    control.style.opacity = '1';
+                });
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                const controls = carousel.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+                controls.forEach(control => {
+                    control.style.opacity = '0';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
