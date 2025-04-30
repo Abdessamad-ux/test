@@ -719,7 +719,12 @@
             <p class="lead text-muted">Choose the package that fits your goals</p>
             
             <!-- Pricing toggle -->
-            
+            <div class="d-flex justify-content-center mb-4">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary active">Standard Plans</button>
+                    <button type="button" class="btn btn-outline-primary">Free Trial Plan</button>
+                </div>
+            </div>
         </div>
         
         <div class="row g-4">
@@ -774,7 +779,6 @@
                             <li style="color: #fbfbfb;" class=""> ddd</li>
                             <li style="color: #fbfbfb;" class=""> ddd</li>
                             <li style="color: #fbfbfb;" class=""> ddd</li>
-
                         </ul>
                         
                         <a class="btn btn-primary w-100 py-3" href="https://www.paypal.com/ncp/payment/RN3EV3GSLTFH8">Get Started <i class="fas fa-arrow-right ms-3"></i></a>
@@ -807,9 +811,34 @@
                             <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Reels Hacks & Sources</li>
                             <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Monthly Updates</li>
                             <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i>Free Gift of  1000+ Udemy and Coursera Premium Courses</li>
-
                         </ul>
                         <a class="btn btn-dark w-100 py-2" href="https://www.paypal.com/ncp/payment/BNZ3RRB7D7CLJ">Get VIP Access <i class="fas fa-gem ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Free Trial Plan (hidden by default) -->
+        <div class="row g-4 d-none" id="freeTrialPlan">
+            <div class="col-md-6 mx-auto" data-aos="fade-up">
+                <div class="pricing-card h-100">
+                    <div class="card-header bg-success text-white text-center py-4 position-relative">
+                        <h4 class="my-0">Free Trial</h4>
+                        <p class="text-white-50 mb-0">Try before you buy</p>
+                    </div>
+                    <div class="card-body text-center py-4">
+                        <div class="mb-3">
+                            <span class="h2">$0</span>
+                            <span class="text-muted">.00</span>
+                        </div>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Instagram & TikTok Grow Method</li>
+                            <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Advanced Growth Hacks</li>
+                            <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Content Templates</li>
+                            <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Email Support</li>
+                            <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Free Courses</li>
+                        </ul>
+                        <a class="btn btn-success w-100 py-3" href="#">Get Free Trial</a>
                     </div>
                 </div>
             </div>
@@ -822,7 +851,9 @@
             
             <div class="mt-4">
                 <p class="text-muted mb-2">Need help choosing?</p>
-                
+                <button class="btn btn-link text-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fas fa-comments me-2"></i>Contact our team
+                </button>
             </div>
         </div>
     </div>
@@ -949,6 +980,27 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script>
+        // Pricing toggle functionality
+const pricingToggleButtons = document.querySelectorAll('.btn-group button');
+const standardPlans = document.querySelector('.row.g-4:not(#freeTrialPlan)');
+const freeTrialPlan = document.getElementById('freeTrialPlan');
+
+pricingToggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Toggle active class on buttons
+        pricingToggleButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Toggle plan visibility
+        if (this.textContent === 'Free Trial Plan') {
+            standardPlans.classList.add('d-none');
+            freeTrialPlan.classList.remove('d-none');
+        } else {
+            standardPlans.classList.remove('d-none');
+            freeTrialPlan.classList.add('d-none');
+        }
+    });
+});
         // Initialize AOS animation
         AOS.init({
             duration: 800,
