@@ -17,24 +17,42 @@
         :root {
             --primary: #6c63ff;
             --primary-dark: #554dd1;
+            --primary-light: rgba(108, 99, 255, 0.1);
             --secondary: #ff6584;
+            --secondary-dark: #e55c78;
             --dark: #1a1a2e;
             --darker: #0f0f1a;
             --light: #f8f9fa;
             --gray: #6c757d;
             --light-gray: #f1f3f5;
+            --border-radius: 12px;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: #fefefe;
         }
         
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
             line-height: 1.3;
+        }
+        
+        .display-4 {
+            font-size: 2.75rem;
+        }
+        
+        @media (min-width: 992px) {
+            .display-4 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .lead {
+            font-size: 1.15rem;
         }
         
         .navbar {
@@ -53,12 +71,20 @@
         .navbar-brand {
             font-weight: 700;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            margin-right: 8px;
+            color: var(--primary);
         }
         
         .nav-link {
             font-weight: 500;
             margin: 0 10px;
             position: relative;
+            transition: all 0.3s ease;
         }
         
         .nav-link:after {
@@ -79,7 +105,7 @@
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
         }
@@ -99,13 +125,20 @@
             z-index: 2;
         }
         
+        .btn {
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-lg {
+            padding: 14px 32px;
+        }
+        
         .btn-primary {
             background-color: var(--primary);
             border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
         }
         
@@ -119,169 +152,44 @@
             background-color: var(--secondary);
             color: white;
             border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 101, 132, 0.4);
         }
         
         .btn-secondary:hover {
-            background-color: #e55c78;
-            color: white;
+            background-color: var(--secondary-dark);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 101, 132, 0.5);
         }
         
-        .feature-box {
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
-            transition: all 0.4s cubic-bezier( --dark: #1a1a2e;
-            --darker: #0f0f1a;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --light-gray: #f1f3f5;
+        .btn-outline-light {
+            border: 2px solid rgba(255,255,255,0.3);
         }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        .navbar {
-            padding: 15px 0;
-            transition: all 0.3s ease;
-            background-color: var(--darker);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 0;
-            background-color: var(--darker) !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 24px;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.5);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 101, 132, 0.4);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #e55c78;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 101, 132, 0.5);
+        .btn-outline-light:hover {
+            border-color: white;
+            background-color: rgba(255,255,255,0.1);
         }
         
         .feature-box {
-            border-radius: 16px;
+            border-radius: var(--border-radius);
             padding: 32px;
             margin-bottom: 24px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             height: 100%;
             border: 1px solid rgba(0,0,0,0.03);
-            transform: translateY(0);
         }
 
         .feature-box:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-box:active {
-            transform: translateY(-4px);
-        }
-        
-        .feature-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
         .feature-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0.2) 100%);
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(108, 99, 255, 0.2) 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -293,7 +201,7 @@
         
         .testimonial-card {
             background: white;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
@@ -314,6 +222,16 @@
             border: 3px solid var(--primary);
         }
         
+        .badge {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+        }
+        
+        .bg-primary-soft {
+            background-color: var(--primary-light);
+        }
+        
         .guarantee-badge {
             background: var(--secondary);
             color: white;
@@ -326,11 +244,12 @@
         }
         
         .pricing-card {
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             transition: all 0.4s ease;
             border: none;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: white;
         }
         
         .pricing-card:hover {
@@ -375,15 +294,16 @@
         .faq-item {
             margin-bottom: 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.03);
         }
         
         .stats-container {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             padding: 40px;
             box-shadow: 0 15px 40px rgba(108, 99, 255, 0.3);
         }
@@ -406,6 +326,7 @@
             display: inline-flex;
             align-items: center;
             margin-top: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .social-proof img {
@@ -423,9 +344,9 @@
         }
         
         .cta-section {
-            background: linear-gradient(135deg, #ff6584 0%, #fc8b5f 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, #fc8b5f 100%);
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
@@ -460,7 +381,7 @@
         .footer {
             background: var(--darker);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
         }
         
         .footer-links {
@@ -532,6 +453,42 @@
             transform: translateY(-3px);
         }
         
+        /* Video thumbnail styling */
+        .video-thumbnail {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        
+        .video-thumbnail .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .play-button {
+            background-color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero {
@@ -539,11 +496,20 @@
             }
             
             .display-4 {
-                font-size: 2.5rem;
+                font-size: 2.25rem;
             }
             
             .stat-number {
                 font-size: 36px;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .feature-box, .testimonial-card, .pricing-card {
+                padding: 24px;
             }
         }
     </style>
@@ -561,10 +527,10 @@
     </style>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--darker); transition: all 0.3s ease;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-crown me-2"></i>Career Maestros Growth
+                <i class="fas fa-crown"></i>Career Maestros Growth
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -588,15 +554,15 @@
         <div class="container hero-content">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold mb-4">El Método <span class="text-warning">Comprobado</span> para Aumentar y Añadir Seguidores a tu Cuenta de TikTok e Instagram</h1>
-                    <p class="lead mb-4">Descubre la estrategia exacta que los mejores usuarios, creadores, influencers y empresas utilizan para ganar <strong>más de 10,000 seguidores reales</strong> en solo 30 días.</p>
+                    <h1 class="display-4 fw-bold mb-4">El Método <span class="text-warning">Comprobado</span> para Aumentar Seguidores en TikTok e Instagram</h1>
+                    <p class="lead mb-4">Descubre la estrategia exacta que los mejores creadores e influencers utilizan para ganar <strong>más de 10,000 seguidores reales</strong> en solo 30 días.</p>
                     <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a href="#pricing" class="btn btn-danger btn-lg">Obtén Acceso Instantáneo Ahora</a>
-                        <a href="#features" class="btn btn-outline-light btn-lg">Cómo Funciona</a>
+                        <a href="#pricing" class="btn btn-danger btn-lg">Obtén Acceso Instantáneo</a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">Ver Cómo Funciona</a>
                     </div>
                     <div class="social-proof" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://www.bluepark.co.uk/user/products/trustpilot-logo-sml.png" alt="Calificación TrustPilot" class="img-fluid">
-                        <div style="color: black;" class="social-proof-text">
+                        <div class="social-proof-text">
                             Calificado <strong>4.9/5</strong> por más de 1,200 clientes<br>
                             <div class="text-warning">
                                 <i class="fas fa-star"></i>
@@ -609,13 +575,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/WJAFH_Ezvxk" title="Video de YouTube" allowfullscreen></iframe>
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 translate-middle-y ms-4">
-                        <div class="bg-white text-dark p-3 rounded-3 shadow-sm">
-                            <div class="d-flex align-items-center">
-                            </div>
+                    <div class="video-thumbnail">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/WJAFH_Ezvxk" title="Video de YouTube" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -638,11 +600,11 @@
                     </div>
                     <div class="col-md-3 mb-4 mb-md-0">
                         <div class="stat-number">3-7</div>
-                        <div class="stat-label">Días para los Primeros Resultados</div>
+                        <div class="stat-label">Días para Resultados</div>
                     </div>
                     <div class="col-md-3">
                         <div class="stat-number">30 Días</div>
-                        <div class="stat-label">Garantía de Devolución</div>
+                        <div class="stat-label">Garantía</div>
                     </div>
                 </div>
             </div>
@@ -661,10 +623,10 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-box text-center">
                         <div class="feature-icon">
-                            <        <i class="fas fa-file-download"></i>
+                            <i class="fas fa-file-download"></i>
                         </div>
                         <h4 class="mb-3">Obtén la Guía</h4>
-                        <p class="text-muted">Descarga instantánea tras la compra. Sin esperas. Guía en PDF completa con instrucciones paso a paso.</p>
+                        <p class="text-muted">Descarga instantánea tras la compra. Guía en PDF completa con instrucciones paso a paso.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -688,8 +650,10 @@
             </div>
             <div class="row mt-5 align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <div class="ratio ratio-16x9 rounded-3 shadow">
-                        <iframe src="https://www.youtube.com/embed/iJEcHi-olDo" title="Vista previa de la Guía de Crecimiento Social VIP" allowfullscreen></iframe>
+                    <div class="video-thumbnail">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/iJEcHi-olDo" title="Vista previa de la Guía de Crecimiento Social VIP" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
@@ -743,7 +707,7 @@
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="badge bg-primary-soft text-primary mb-3">HISTORIAS DE ÉXITO</span>
-                <h2 class="mb-3">Personas Reales, <br class="d-none d-lg-block">Resultadossă Reales</h2>
+                <h2 class="mb-3">Personas Reales, <br class="d-none d-lg-block">Resultados Reales</h2>
                 <p class="lead text-muted">Esto es lo que otros han logrado con nuestro método:</p>
             </div>
             <div class="row g-4">
@@ -834,7 +798,7 @@
                 <div class="d-flex justify-content-center mb-4">
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-outline-primary active">Planes Estándar</button>
-                        <button type="button" class="btn btn-outline-primary">plan básico</button>
+                        <button type="button" class="btn btn-outline-primary">Plan Básico</button>
                     </div>
                 </div>
             </div>
@@ -855,13 +819,13 @@
                                 <span class="text-muted">.99</span>
                             </div>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Método de Crecimiento para Instagram y TikTok</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Llamada de Coaching 1-a-1</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Estrategia de Contenido Avanzada</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Trucos de Crecimiento Avanzados</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Plantillas de Contenido</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Soporte por Correo Electrónico</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Regalo Gratis de Más de 200 Cursos Premium de Udemy y Coursera</li>
+                                <li class="pricing-feature py-2">Método de Crecimiento para Instagram y TikTok</li>
+                                <li class="pricing-feature py-2">Llamada de Coaching 1-a-1</li>
+                                <li class="pricing-feature py-2">Estrategia de Contenido Avanzada</li>
+                                <li class="pricing-feature py-2">Trucos de Crecimiento Avanzados</li>
+                                <li class="pricing-feature py-2">Plantillas de Contenido</li>
+                                <li class="pricing-feature py-2">Soporte por Correo Electrónico</li>
+                                <li class="pricing-feature py-2">200+ Cursos Premium de Udemy y Coursera</li>
                             </ul>
                             <a class="btn btn-outline-primary w-100 py-2" href="https://www.paypal.com/ncp/payment/K42WC3KBUQHXQ">Comenzar</a>
                         </div>
@@ -869,12 +833,10 @@
                 </div>
                 <!-- Pro Plan (Popular) -->
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pricing-card popular h-100" style="transform: scale(1.05);">
+                    <div class="pricing-card h-100" style="transform: scale(1.05);">
                         <div class="card-header bg-primary text-white text-center py-4 position-relative">
                             <h4 class="my-0">Básico</h4>
                             <p class="text-white-50 mb-0">Paquete inicial</p>
-                            <div class="position-absolute top-0 start-50 translate-middle" style="top: -10px;">
-                            </div>
                         </div>
                         <div class="card-body text-center py-4">
                             <div class="mb-3">
@@ -882,15 +844,15 @@
                                 <span class="text-muted">.99</span>
                             </div>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Método de Crecimiento para Instagram y TikTok</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Trucos de Crecimiento Avanzados</li>
-                                <li style="color: #fbfbfb;" class=""> ddd</li>
-                                <li style="color: #fbfbfb;" class=""> ddd</li>
-                                <li style="color: #fbfbfb;" class=""> ddd</li>
-                                <li style="color: #fbfbfb;" class=""> ddd</li>
-                                <li style="color: #fbfbfb;" class=""> ddd</li>
+                                <li class="pricing-feature py-2">Método de Crecimiento para Instagram y TikTok</li>
+                                <li class="pricing-feature py-2">Trucos de Crecimiento Avanzados</li>
+                                <li style="color: transparent;" class="py-2">Espaciador</li>
+                                <li style="color: transparent;" class="py-2">Espaciador</li>
+                                <li style="color: transparent;" class="py-2">Espaciador</li>
+                                <li style="color: transparent;" class="py-2">Espaciador</li>
+                                <li style="color: transparent;" class="py-2">Espaciador</li>
                             </ul>
-                            <a class="btn btn-primary w-100 py-3" href="https://www.paypal.com/ncp/payment/RN3EV3GSLTFH8">Comenzar <i class="fas fa-arrow-right ms-3"></i></a>
+                            <a class="btn btn-primary w-100 py-3" href="https://www.paypal.com/ncp/payment/RN3EV3GSLTFH8">Comenzar <i class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -910,15 +872,13 @@
                                 <span class="text-muted">.99</span>
                             </div>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Todas las Características del Plan Pro</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Llamada de Coaching 1-a-1</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Coaching por Video en Vivo</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Plan de Estrategia Personalizado</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Plantillas de Contenido</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Soporte Prioritario</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Trucos y Fuentes para Reels</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Actualizaciones Mensuales</li>
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Regalo Gratis de Más de 1,000 Cursos Premium de Udemy y Coursera</li>
+                                <li class="pricing-feature py-2">Todas las Características del Plan Pro</li>
+                                <li class="pricing-feature py-2">Llamada de Coaching 1-a-1</li>
+                                <li class="pricing-feature py-2">Coaching por Video en Vivo</li>
+                                <li class="pricing-feature py-2">Plan de Estrategia Personalizado</li>
+                                <li class="pricing-feature py-2">Plantillas de Contenido</li>
+                                <li class="pricing-feature py-2">Soporte Prioritario</li>
+                                <li class="pricing-feature py-2">1,000+ Cursos Premium</li>
                             </ul>
                             <a class="btn btn-dark w-100 py-2" href="https://www.paypal.com/ncp/payment/BNZ3RRB7D7CLJ">Obtén Acceso VIP <i class="fas fa-gem ms-2"></i></a>
                         </div>
@@ -939,13 +899,13 @@
                                 <span class="text-muted">.99</span>
                             </div>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li class="pricing-feature py-2"><i class="fas fa-check-circle me-2 text-success"></i> Método de Crecimiento para Instagram y TikTok</li>
-                                <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Trucos de Crecimiento Avanzados</li>
-                                <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Plantillas de Contenido</li>
-                                <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Soporte por Correo Electrónico</li>
-                                <li class="pricing-feature py-2 disabled"><i class="fas fa-times-circle me-2 text-muted"></i> Cursos Gratuitos</li>
+                                <li class="pricing-feature py-2">Método de Crecimiento para Instagram y TikTok</li>
+                                <li class="pricing-feature py-2 disabled">Trucos de Crecimiento Avanzados</li>
+                                <li class="pricing-feature py-2 disabled">Plantillas de Contenido</li>
+                                <li class="pricing-feature py-2 disabled">Soporte por Correo Electrónico</li>
+                                <li class="pricing-feature py-2 disabled">Cursos Gratuitos</li>
                             </ul>
-                            <a class="btn btn-success w-100 py-3" href="https://www.paypal.com/ncp/payment/LXZHVV3D9M2KL">acceder ahora</a>
+                            <a class="btn btn-success w-100 py-3" href="https://www.paypal.com/ncp/payment/LXZHVV3D9M2KL">Acceder ahora</a>
                         </div>
                     </div>
                 </div>
@@ -1064,15 +1024,51 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">
+                        <i class="fas fa-crown me-2"></i>Career Maestros Growth
+                    </h4>
+                    <p class="text-muted">El método comprobado para aumentar tus seguidores en Instagram y TikTok de forma orgánica y sostenible.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Enlaces</h5>
+                    <ul class="footer-links">
+                        <li><a href="#features">Método</a></li>
+                        <li><a href="#testimonials">Resultados</a></li>
+                        <li><a href="#pricing">Precios</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Garantía de Devolución</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-white mb-4">Contacto</h5>
+                    <ul class="footer-links">
+                        <li><a href="mailto:soporte@careermaestros.com">soporte@careermaestros.com</a></li>
+                        <li class="mt-3">
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <hr class="my-5 bg-secondary">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="mb-0 text-muted">© 2023 Career Maestros Growth. Todos los derechos reservados.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <h4 class="text-white mb-4">
-                        <i class="fas fa-crown me-2"></i>Career Maestros Growth
-                    </h4>
+                    <p class="mb-0 text-muted">Diseñado con <i class="fas fa-heart text-danger"></i> para creadores</p>
                 </div>
             </div>
         </div>
@@ -1085,31 +1081,33 @@
     <!-- Custom JS -->
     <script>
         // Pricing toggle functionality
-const pricingToggleButtons = document.querySelectorAll('.btn-group button');
-const standardPlans = document.querySelector('.row.g-4:not(#freeTrialPlan)');
-const freeTrialPlan = document.getElementById('freeTrialPlan');
+        const pricingToggleButtons = document.querySelectorAll('.btn-group button');
+        const standardPlans = document.querySelector('.row.g-4:not(#freeTrialPlan)');
+        const freeTrialPlan = document.getElementById('freeTrialPlan');
 
-pricingToggleButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        // Toggle active class on buttons
-        pricingToggleButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
+        pricingToggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Toggle active class on buttons
+                pricingToggleButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Toggle plan visibility
+                if (this.textContent === 'Plan Básico') {
+                    standardPlans.classList.add('d-none');
+                    freeTrialPlan.classList.remove('d-none');
+                } else {
+                    standardPlans.classList.remove('d-none');
+                    freeTrialPlan.classList.add('d-none');
+                }
+            });
+        });
         
-        // Toggle plan visibility
-        if (this.textContent === 'Plan de Prueba Gratuita') {
-            standardPlans.classList.add('d-none');
-            freeTrialPlan.classList.remove('d-none');
-        } else {
-            standardPlans.classList.remove('d-none');
-            freeTrialPlan.classList.add('d-none');
-        }
-    });
-});
         // Initialize AOS animation
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
-            once: true
+            once: true,
+            offset: 100
         });
         
         // Navbar scroll effect
