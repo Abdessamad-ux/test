@@ -229,6 +229,7 @@
             align-items: center;
             font-weight: 500;
             cursor: pointer;
+            transition: all 0.2s;
         }
         
         .robux-amount:hover {
@@ -261,31 +262,172 @@
             font-weight: 500;
         }
         
+        /* Premium Section */
+        .premium-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .premium-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .premium-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--roblox-orange);
+        }
+        
+        .premium-price {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .premium-desc {
+            margin-bottom: 15px;
+            color: var(--roblox-light-text);
+            font-size: 15px;
+        }
+        
+        .premium-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .feature-icon {
+            color: var(--roblox-orange);
+            font-size: 16px;
+            min-width: 20px;
+        }
+        
+        .btn-premium {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--roblox-orange);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-premium:hover {
+            background-color: var(--roblox-dark-orange);
+        }
+        
         /* Content Locker Modal */
-        .content-locker {
+        .content-locker-modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
             z-index: 2000;
             justify-content: center;
             align-items: center;
         }
         
-        .content-locker.active {
-            display: flex;
+        .content-locker-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
         }
         
-        .locker-content {
+        .close-locker {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .legal-text {
+            font-size: 11px;
+            color: var(--roblox-light-text);
+            line-height: 1.6;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        
+        /* Footer */
+        .footer {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
+            padding: 30px 0 20px;
+            border-top: 1px solid var(--roblox-border);
+        }
+        
+        .footer-container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-column h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: var(--roblox-text);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-column a {
+            text-decoration: none;
+            color: var(--roblox-light-text);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--roblox-blue);
+        }
+        
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid var(--roblox-border);
+            font-size: 11px;
+            color: var(--roblox-light-text);
         }
         
         /* Responsive Styles */
@@ -312,6 +454,10 @@
             
             .hero h1 {
                 font-size: 32px;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
@@ -364,9 +510,37 @@
             .col-mobile::before, .col-web::before {
                 content: none;
             }
+            
+            .premium-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .premium-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
         
-        @media (min-width: 992px) {}
+        @media (min-width: 992px) {
+            .premium-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -403,7 +577,7 @@
     <main class="main-container">
         <div class="hero">
             <h1>Enjoy up to 100% <br> more Robux</h1>
-            <p>Get more Robux on computer, web, and with gift cards for $0</p>
+            <p>Get more Robux on computer, web, and with gift cards</p>
         </div>
         
         <!-- Pricing Table -->
@@ -423,7 +597,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="24000">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 24,000
                         </span>
                     </span>
@@ -440,7 +614,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="11000">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 11,000
                         </span>
                     </span>
@@ -457,7 +631,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="5250">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 5,250
                         </span>
                     </span>
@@ -474,7 +648,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="2000">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 2,000
                         </span>
                     </span>
@@ -491,7 +665,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="1000">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 1,000
                         </span>
                     </span>
@@ -508,7 +682,7 @@
                 </div>
                 <div class="col-web">
                     <span class="web-option">
-                        <span class="robux-amount" data-locker="true">
+                        <span class="robux-amount" data-amount="500">
                             <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/c/2/f/c2fc0404eeb8d393407bdaebe2cc9994a8953550.png" alt="Robux" class="robux-icon"> 500
                         </span>
                     </span>
@@ -516,19 +690,130 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Premium Section -->
+        <div class="premium-card">
+            <div class="premium-header">
+                <h2 class="premium-title">Roblox Premium 450</h2>
+                <div class="premium-price">$4.99/month</div>
+            </div>
+            
+            <p class="premium-desc">
+                Get a 450 Robux monthly stipend and 10% more Robux when you buy Robux on the web, plus access to our trading feature and the ability to sell items!
+            </p>
+            
+            <div class="premium-features">
+                <div class="feature-item">
+                    <i class="fas fa-gem feature-icon"></i>
+                    <span>450 Robux every month</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-percentage feature-icon"></i>
+                    <span>10% bonus when buying Robux</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-store feature-icon"></i>
+                    <span>Sell items and clothing</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-exchange-alt feature-icon"></i>
+                    <span>Trade items with friends</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tag feature-icon"></i>
+                    <span>Premium-only items</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-plus feature-icon"></i>
+                    <span>Premium server slots</span>
+                </div>
+            </div>
+            
+            <button class="btn-premium">Subscribe to Premium</button>
+        </div>
+        
+        <p class="legal-text">
+            *Robux may take up to 24 hours to appear in your account. Bonus Robux are awarded for purchases made on computer, web, and gift cards. Mobile and console purchases do not qualify for bonus Robux. Robux purchases are non-refundable. By clicking "Buy", you agree to our Terms of Use and acknowledge you have read our Privacy Policy.
+        </p>
     </main>
-
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">About Roblox</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Parents</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Creator Dashboard</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Safety</a></li>
+                        <li><a href="#">Community Standards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Avatar Shop</a></li>
+                        <li><a href="#">Robux</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Developer Hub</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>©2024 Roblox Corporation. All rights reserved.</div>
+                <div>Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</div>
+            </div>
+        </div>
+    </footer>
+    
     <!-- Content Locker Modal -->
-    <div class="content-locker" id="contentLocker">
-        <div class="locker-content">
-            <script type="text/javascript">
-                var CwJua_Mrm_btykYc={"it":4507084,"key":"52869"};
-            </script>
-            <script src="https://dlk457skl57zp.cloudfront.net/7b17fc5.js"></script>
-            <script>_bu();</script>
+    <div class="content-locker-modal" id="contentLockerModal">
+        <span class="close-locker">&times;</span>
+        <div class="content-locker-container" id="contentLockerContainer">
+            <h3>Complete Offer to Get <span id="selectedRobuxAmount">0</span> Robux</h3>
+            <p>Please complete one of the offers below to receive your Robux:</p>
+            <div id="contentLockerScript"></div>
         </div>
     </div>
-
+    
     <script>
         // Simple interactivity
         document.addEventListener('DOMContentLoaded', function() {
@@ -553,22 +838,82 @@
                 });
             });
             
-            // Content Locker Trigger
-            const lockerTriggerElements = document.querySelectorAll('.robux-amount[data-locker="true"]');
-            const contentLocker = document.getElementById('contentLocker');
-
-            lockerTriggerElements.forEach(element => {
-                element.addEventListener('click', () => {
-                    contentLocker.classList.add('active');
+            // Premium button click
+            const premiumBtn = document.querySelector('.btn-premium');
+            if (premiumBtn) {
+                premiumBtn.addEventListener('click', () => {
+                    alert('Premium subscription would be processed here in a real implementation.');
                 });
-            });
-
-            // Close content locker (optional, you can add a close button if needed)
-            contentLocker.addEventListener('click', (e) => {
-                if (e.target === contentLocker) {
-                    contentLocker.classList.remove('active');
+            }
+            
+            // Handle window resize to ensure proper menu display
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768 && navLinks) {
+                    navLinks.style.display = 'flex';
+                } else if (navLinks) {
+                    navLinks.style.display = 'none';
                 }
             });
+            
+            // Content Locker Implementation
+            const robuxAmounts = document.querySelectorAll('.robux-amount');
+            const contentLockerModal = document.getElementById('contentLockerModal');
+            const contentLockerContainer = document.getElementById('contentLockerContainer');
+            const selectedRobuxAmount = document.getElementById('selectedRobuxAmount');
+            const closeLocker = document.querySelector('.close-locker');
+            
+            // Add click event to all robux amounts
+            robuxAmounts.forEach(amount => {
+                amount.addEventListener('click', function() {
+                    // Get the robux amount from data attribute or text
+                    const robuxValue = this.getAttribute('data-amount') || 
+                                      this.textContent.replace(/\D/g, '');
+                    
+                    // Show the selected amount in the modal
+                    selectedRobuxAmount.textContent = robuxValue;
+                    
+                    // Show the modal
+                    contentLockerModal.style.display = 'flex';
+                    
+                    // Load the content locker script
+                    loadContentLocker();
+                });
+            });
+            
+            // Close modal when clicking X
+            closeLocker.addEventListener('click', function() {
+                contentLockerModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            contentLockerModal.addEventListener('click', function(e) {
+                if (e.target === contentLockerModal) {
+                    contentLockerModal.style.display = 'none';
+                }
+            });
+            
+            // Function to load content locker script
+            function loadContentLocker() {
+                // Clear previous content
+                document.getElementById('contentLockerScript').innerHTML = '';
+                
+                // Create script element
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.innerHTML = 'var CwJua_Mrm_btykYc={"it":4507084,"key":"52869"};';
+                document.getElementById('contentLockerScript').appendChild(script);
+                
+                // Create second script element
+                const script2 = document.createElement('script');
+                script2.src = 'https://dlk457skl57zp.cloudfront.net/7b17fc5.js';
+                script2.onload = function() {
+                    // Call the locker function after script loads
+                    if (typeof _bu === 'function') {
+                        _bu();
+                    }
+                };
+                document.getElementById('contentLockerScript').appendChild(script2);
+            }
         });
     </script>
 </body>
