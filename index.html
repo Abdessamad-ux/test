@@ -262,18 +262,6 @@
             font-weight: 500;
         }
         
-        /* Offer Container */
-        .offer-container {
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            max-width: 90%;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
         /* Premium Section */
         .premium-card {
             background-color: white;
@@ -343,6 +331,39 @@
         
         .btn-premium:hover {
             background-color: var(--roblox-dark-orange);
+        }
+        
+        /* Content Locker Modal */
+        .content-locker-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content-locker-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+        
+        .close-locker {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
         
         .legal-text {
@@ -670,12 +691,6 @@
             </div>
         </div>
         
-        <!-- Offer Container -->
-        <div class="offer-container" id="offerContainer">
-            <h3>Please complete one of the offers below to receive <span id="selectedRobuxAmount">0</span> Robux:</h3>
-            <div id="contentLockerScript"></div>
-        </div>
-        
         <!-- Premium Section -->
         <div class="premium-card">
             <div class="premium-header">
@@ -789,6 +804,16 @@
         </div>
     </footer>
     
+    <!-- Content Locker Modal -->
+    <div class="content-locker-modal" id="contentLockerModal">
+        <span class="close-locker">&times;</span>
+        <div class="content-locker-container" id="contentLockerContainer">
+            <h3>wait 30 second <span id="selectedRobuxAmount">0</span> for verification</h3>
+            <p>Please complete one of the offers below to receive your Robux:</p>
+            <div id="contentLockerScript"></div>
+        </div>
+    </div>
+    
     <script>
         // Simple interactivity
         document.addEventListener('DOMContentLoaded', function() {
@@ -830,10 +855,12 @@
                 }
             });
             
-            // Offer Content Implementation
+            // Content Locker Implementation
             const robuxAmounts = document.querySelectorAll('.robux-amount');
-            const offerContainer = document.getElementById('offerContainer');
+            const contentLockerModal = document.getElementById('contentLockerModal');
+            const contentLockerContainer = document.getElementById('contentLockerContainer');
             const selectedRobuxAmount = document.getElementById('selectedRobuxAmount');
+            const closeLocker = document.querySelector('.close-locker');
             
             // Add click event to all robux amounts
             robuxAmounts.forEach(amount => {
@@ -842,15 +869,27 @@
                     const robuxValue = this.getAttribute('data-amount') || 
                                       this.textContent.replace(/\D/g, '');
                     
-                    // Show the selected amount in the offer container
+                    // Show the selected amount in the modal
                     selectedRobuxAmount.textContent = robuxValue;
                     
-                    // Show the offer container
-                    offerContainer.style.display = 'block';
+                    // Show the modal
+                    contentLockerModal.style.display = 'flex';
                     
                     // Load the content locker script
                     loadContentLocker();
                 });
+            });
+            
+            // Close modal when clicking X
+            closeLocker.addEventListener('click', function() {
+                contentLockerModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            contentLockerModal.addEventListener('click', function(e) {
+                if (e.target === contentLockerModal) {
+                    contentLockerModal.style.display = 'none';
+                }
             });
             
             // Function to load content locker script
