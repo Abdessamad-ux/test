@@ -521,6 +521,102 @@
             position: relative;
             z-index: 1;
         }
+
+
+        /* Testimonials Section */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background: rgba(30,30,30,0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 0, 122, 0.2);
+    border: 1px solid rgba(255,0,122,0.3);
+}
+
+.testimonial-image {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card:hover .testimonial-image img {
+    transform: scale(1.1);
+}
+
+.testimonial-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom, rgba(255,0,122,0.2), rgba(121,40,202,0.5)); */
+}
+
+.testimonial-content {
+    padding: 25px;
+    position: relative;
+}
+
+.testimonial-quote {
+    position: relative;
+}
+
+.testimonial-quote i:first-child {
+    font-size: 2rem;
+    color: var(--primary);
+    opacity: 0.2;
+    position: absolute;
+    top: -15px;
+    left: -10px;
+}
+
+.testimonial-quote p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-rating {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-image {
+        height: 180px;
+    }
+}
         
         /* Floating animation */
         @keyframes float {
@@ -884,7 +980,7 @@
         <div class="container">
             <div class="logo floating">
                 <i class="fab fa-instagram"></i>
-                <span>Add Instagram Followers</span>
+                <span>Instagram Followers</span>
             </div>
             
         </div>
@@ -901,7 +997,7 @@
                     <i class="fab fa-instagram"></i>
                     <h3>Instagram Followers</h3>
                 </div>
-                <div class="price">40 Followers / $0.40 </div>
+                <div class="price">30 Followers / $0.40 </div>
                 <ul class="features">
                     <li>High-quality followers (accounts with profile pictures and active followers, not bots.) </li>
                     <li>Instant delivery — followers start arriving within 1 to 10 minutes.</li>
@@ -1170,29 +1266,72 @@
             </div>
         </section>
 
-        <section class="benefits">
-            <h2>Explore our ebooks</h2>
-            <div class="benefit-grid">
-                
-                <div class="benefit-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Whatsapp</h3>
-                    <a href="https://wa.me/31637630250"><p>Got questions? We're here to help.</p></a>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/anezom.1/"><p>Visit our official page</p></a>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Email</h3>
-                    <a href="mailto:contact.abdessamade@gmail.com"><p>Contact Us</p></a>
-                </div>
-                
-                
+        
+
+         <section class="benefits">
+    <h2>Testimonials</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://i.postimg.cc/Gm3D1BqT/1.jpg" alt="Happy Customer">
+                <div class="testimonial-overlay"></div>
             </div>
-        </section>
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p></p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://i.postimg.cc/rsJphj6n/2.jpg" alt="Satisfied Client">
+                <div class="testimonial-overlay"></div>
+            </div>
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p></p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-image">
+                <img src="https://i.postimg.cc/XvCYM4Sy/3.jpg" alt="Verified Buyer">
+                <div class="testimonial-overlay"></div>
+            </div>
+            <div class="testimonial-content">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p></p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         
         <section class="faq">
             <h2>Frequently Asked Questions</h2>
